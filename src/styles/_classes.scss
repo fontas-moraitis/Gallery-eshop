@@ -1,0 +1,168 @@
+/* MAIN CLASSES */
+.wrapper {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: $beize;
+}
+
+.container {
+  @include flex-center;
+  margin-top: $header-height;
+}
+
+.container--column {
+  @include flex-center-column;
+  margin-top: $header-height;
+}
+
+.page-header {
+  font-size: $font-large;
+  font-weight: $font-thin;
+  letter-spacing: 3.5px;
+  color: $black;
+  max-width: 480px;
+  text-align: center;
+  margin: 2% 0 2% 0;
+  line-height: 1.2;
+  animation: ghost 2s linear forwards;
+}
+
+.button {
+  position: relative;
+  min-width: 100px;
+  height: 40px;
+  border: 1px solid black;
+  letter-spacing: 1.1px;
+  padding: 0 $pad-medium;
+  cursor: pointer;
+}
+
+.button:active {
+  transform: translateY(5px);
+}
+
+.button--light {
+  background-color: $white;
+}
+
+.button--dark {
+  background-color: $black;
+  color: $white;
+}
+
+.button:hover {
+color: $white;
+background-color: $black;
+}
+
+.ml-large {
+  margin-left: $marg-large;
+}
+
+.mr-large {
+  margin-right: $marg-large;
+}
+
+.mr-xlarge {
+  margin-right: $marg-xlarge;
+}
+
+.mb-xxlarge {
+  margin-bottom: $marg-xxlarge;
+}
+
+.heavy {
+  font-weight: $font-thick !important;
+  letter-spacing: 1.1px;
+}
+.medium {
+  font-weight: $font-medium !important;
+  letter-spacing: 1.1px;
+}
+
+.dark-theme {
+  color: $black;
+  background-color: rgba(248, 247, 245, .8);
+  backdrop-filter: blur(5px);
+}
+
+.light-theme {
+  color: $white;
+  .cart-number {
+    border: 0.9px solid white !important;
+  }
+}
+
+.shake {
+  animation: shake 1s ease forwards;
+}
+
+.ghost {
+  animation: ghost 2s ease forwards;
+}
+
+/* TRANSITION CLASSES */
+.active-image {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: all 3500ms ease;
+}
+
+.active {
+  color: $black;
+}
+
+.exact-active {
+  font-weight: $font-medium !important;
+}
+
+// page transitions
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 300ms ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// loader
+
+.loader-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: $beize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin {
+  width: 50px;
+  height: 50px;
+  border: 3px solid gainsboro;
+  border-radius: 50%;
+  border-top-color: $black;
+  animation: spin 1s ease-in-out infinite;
+}
+
+// Error
+
+.error-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-text {
+  @include title-standard;
+  margin-bottom: $marg-xlarge;
+}

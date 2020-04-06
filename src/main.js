@@ -3,6 +3,17 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import VueCurrencyFilter from 'vue-currency-filter'
+Vue.use(VueCurrencyFilter,
+  {
+    symbol: '€',
+    thousandsSeparator: '.',
+    fractionCount: 2,
+    fractionSeparator: ',',
+    symbolPosition: 'front',
+    symbolSpacing: true
+  })
+
 Vue.config.productionTip = false
 
 new Vue({
