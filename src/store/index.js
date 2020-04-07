@@ -73,7 +73,6 @@ export default new Vuex.Store({
       }
     },
     removeItemFromCart: (state, payload) => {
-      console.log(payload)
       state.cart = state.cart.filter(product => product.id !== payload)
     },
     updateQuantity: (state, payload) => {
@@ -117,7 +116,6 @@ export default new Vuex.Store({
       })
         .then(response => {
           const collectionData = response.data.story.content.body
-          console.log(collectionData)
           commit('setCollectionData', collectionData)
         }).catch(error => {
           commit('collectionDataFailed', error)
@@ -143,7 +141,5 @@ export default new Vuex.Store({
           commit('aboutDataFailed', error)
         })
     }
-  },
-  modules: {
   }
 })

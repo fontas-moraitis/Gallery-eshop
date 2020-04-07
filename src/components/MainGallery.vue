@@ -35,7 +35,7 @@ export default {
       } else if (this.currentIndex === (this.cmsMainGallery.length - 1)) {
         this.currentIndex = 0
       }
-    }.bind(this), 4500)
+    }.bind(this), 8000)
   },
   methods: {}
 }
@@ -62,16 +62,16 @@ export default {
       height: auto;
       visibility: hidden;
       opacity: 0;
-      transition: all 4000ms ease;
+      transition: all 6000ms ease;
       animation: sliding 20s linear infinite;
-      filter: brightness(.85);
+      filter: brightness(.9);
     }
   }
   &__hero-text {
     @include flex-center-column;
     position: fixed;
     left: 50%;
-    top: 70%;
+    top: 75%;
     transform: translate(-50%, -50%);
     z-index: 4;
     max-width: 520px;

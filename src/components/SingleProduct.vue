@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
   .image-container > a > img {
-     width: 380px;
+     width: 320px;
      margin-bottom: $marg-small;
      cursor: pointer;
   }

@@ -26,8 +26,7 @@
         <router-link :to="{ name: 'Home' }">
           <div class="error-wrapper">
             <img src="@/assets/broken-pot.jpg" alt="broken pot">
-            <p class="error-text">something went wrong</p>
-            <router-link :to="{ name: 'Home' }">return home</router-link>
+             <button class="error-text button button--light">something went wrong, click here to go home</button>
           </div>
         </router-link>
       </template>
@@ -67,11 +66,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.collection{
-  &__expo {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+  .collection{
+    &__expo {
+      max-width: 1120px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
   }
-}
 </style>

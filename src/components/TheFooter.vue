@@ -18,11 +18,11 @@
   .app-footer {
     width: 100vw;
     height: 140px;
-    background-color: $black;
-    color: $white;
+    background-color: $beize;
     padding: $pad-xxlarge 0;
     margin-top: $marg-xxlarge;
     font-size: $font-xxsmall;
+    border-top: 1px solid rgb(190, 190, 190);
     a {
       text-decoration: none;
       color: inherit;

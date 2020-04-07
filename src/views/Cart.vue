@@ -3,7 +3,7 @@
     <!-- if cart is empty show: -->
     <div class="cart-wrapper__empty-cart" v-if="cartItems.length < 1">
       <p class="page-header">your bag is empty</p>
-      <BackToGallery />
+      <ButtonToGallery />
     </div>
     <!-- otherwise show items -->
     <div class="cart-wrapper__cart" v-else>
@@ -27,7 +27,7 @@
           @input="handleQuantity($event, product.id)"
          />
         <div>{{product.price | currency}}</div>
-        <div class="medium">{{priceByQuantity(product.quantity, product.price) | currency}}</div>
+        <div class="medium">{{ priceByQuantity(product.quantity, product.price) | currency }}</div>
         <a @click.prevent="removeItemFromCart(product.id)">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z"/>
@@ -41,7 +41,7 @@
       </div>
       <div class="bag-row heavy">
         <p class="total-text">total: </p>
-        <p class="total-price">{{totalPrice | currency}}</p>
+        <p class="total-price">{{ totalPrice | currency }}</p>
       </div>
       <button class="button button--dark" @click="sendRequest">send your request</button>
       <ContactForm
@@ -56,14 +56,14 @@
 <script>
 import { mapState, mapMutations } from 'vuex'
 
-import BackToGallery from '@/components/BackToGallery.vue'
+import ButtonToGallery from '@/components/ButtonToGallery.vue'
 import QuantityInput from '@/components/QuantityInput.vue'
 import ContactForm from '@/components/ContactForm.vue'
 
 export default {
   name: 'Cart',
   components: {
-    BackToGallery,
+    ButtonToGallery,
     QuantityInput,
     ContactForm
   },
@@ -102,10 +102,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  img {
-    width: 80px;
-  }
-
   .cart-wrapper {
     padding: 100px 0;
     width: 100vw;
@@ -115,10 +111,6 @@ export default {
     justify-content: center;
     align-items: center;
     background-color: $beize;
-    &__cart {
-      display: flex;
-      flex-direction: column;
-    }
     &__empty-cart {
       display: flex;
       flex-direction: column;
@@ -128,32 +120,40 @@ export default {
         margin-bottom: $marg-xxlarge;
       }
     }
-  }
+    &__cart {
+      display: flex;
+      flex-direction: column;
+      .bag-row {
+        max-width: 1400px;
+        min-height: 100px;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(5, 1fr) .2fr;
+        padding: $pad-xlarge;
+        justify-items: center;
+        align-items: center;
+        border-bottom: 1px solid $beize;
+        line-height: 1.5;
+        font-size: $font-xsmall;
+        .product-wrapper {
+          img {
+            width: 80px;
+          }
+        }
+        .total-text {
+          grid-column: 4 / span 1;
+        }
+        .total-price {
+          grid-column: 5 / span 1;
+        }
+        a {
+          cursor: pointer;
+        }
+      }
 
-  .bag-row {
-    max-width: 1400px;
-    min-height: 100px;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(5, 1fr) .2fr;
-    padding: $pad-xlarge;
-    justify-items: center;
-    align-items: center;
-    border-bottom: 1px solid $beize;
-    line-height: 1.5;
-    font-size: $font-xsmall;
-    .total-text {
-      grid-column: 4 / span 1;
+      .bag-row-colored {
+        background-color: #efeeee;
+      }
     }
-    .total-price {
-      grid-column: 5 / span 1;
-    }
-    a {
-      cursor: pointer;
-    }
-  }
-
-  .bag-row-colored {
-    background-color: #efeeee;
   }
 </style>

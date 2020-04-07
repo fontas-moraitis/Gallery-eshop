@@ -165,4 +165,5 @@ background-color: $black;
 .error-text {
   @include title-standard;
   margin-bottom: $marg-xlarge;
+  font-weight: $font-thin;
 }

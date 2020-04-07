@@ -40,20 +40,19 @@
                 <p class="item-info">dimensions: {{comProduct.prodDimensions}} cm</p>
                 <p class="item-info">weight: {{comProduct.prodWeight}} kg</p>
                 <p class="item-price medium">{{comProduct.prodPrice | currency}} | <span class="price-info">(price per item)</span></p>
-              <div class="item-buttons">
-                <!-- <button @click.prevent="back" class="button button--light mr-xlarge">all items</button> -->
-                  <QuantityInput
-                    :value="1"
-                    @input="handleQuantity"
-                    @keydown.enter.prevent="handleSetToCart"
-                  />
-                  <button
-                    @click.prevent="handleSetToCart"
-                    class="button button--dark ml-large"
-                  >
-                add to cart
-                </button>
-              </div>
+                <div class="item-buttons">
+                    <QuantityInput
+                      :value="1"
+                      @input="handleQuantity"
+                      @keydown.enter.prevent="handleSetToCart"
+                    />
+                    <button
+                      @click.prevent="handleSetToCart"
+                      class="button button--dark ml-large"
+                    >
+                      add to cart
+                    </button>
+                </div>
               </div>
             </div>
             <TheFooter />
@@ -65,7 +64,7 @@
       <router-link :to="{ name: 'Home' }">
         <div class="error-wrapper">
           <img src="@/assets/broken-pot.jpg" alt="broken pot">
-          <p class="error-text">something went wrong, click here to go home</p>
+          <button class="error-text button button--light">something went wrong, click here to go home</button>
         </div>
       </router-link>
     </template>
@@ -177,62 +176,62 @@ export default {
       width: 480px;
       margin-right: $marg-xlarge;
     }
+    .additional-images-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 480px;
+      justify-content: space-between;
+      margin: $marg-medium;
+      flex-shrink: 1; /* default 1 */
+      .additional-images {
+        img {
+          width: 140px;
+          cursor: pointer;
+        }
+      }
+    }
     &__text {
       display: flex;
       flex-direction: column;
+      .item-title {
+        font-size: $font-large;
+        margin-bottom: $marg-small;
+      }
+      .item-price {
+        font-weight: $font-normal;
+        margin: $marg-xlarge 0 $marg-xxlarge 0;
+        .price-info {
+          font-size: $font-xxsmall;
+        }
+      }
+      .item-info-title {
+        margin-bottom: $marg-small;
+        font-size: $font-xsmall;
+      }
+      .item-info {
+        margin-bottom: $marg-xxsmall;
+        font-size: $font-xsmall;
+        letter-spacing: 1.1px;
+      }
+      .item-desc {
+        font-weight: $font-thin;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        margin: $marg-xsmall 0 $marg-xxlarge 0;
+      }
+      .item-buttons {
+        width: 100%;
+        display: flex;
+      }
     }
   }
-  .item-title {
-    font-size: $font-large;
-    margin-bottom: $marg-small;
-  }
-  .item-price {
-    font-weight: $font-normal;
-    margin: $marg-xlarge 0 $marg-xxlarge 0;
-    .price-info {
-      font-size: $font-xxsmall;
-    }
-  }
-  .item-info-title {
-    margin-bottom: $marg-small;
-    font-size: $font-xsmall;
-  }
-  .item-info {
-    margin-bottom: $marg-xxsmall;
-    font-size: $font-xsmall;
-    letter-spacing: 1.1px;
-  }
-  .item-desc {
-    font-weight: $font-thin;
-    letter-spacing: 1px;
-    line-height: 1.5;
-    margin: $marg-xsmall 0 $marg-xxlarge 0;
-  }
-  .item-buttons {
-    width: 100%;
-    display: flex;
-  }
+
   .bread-cramp {
     font-size: $font-xsmall;
     font-weight: $font-thin;
     margin: $marg-xlarge 0 $marg-small 0;
     a {
       text-decoration: none;
-    }
-  }
-
-  .additional-images-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 480px;
-    justify-content: space-between;
-    margin: $marg-medium;
-    flex-shrink: 1; /* default 1 */
-    .additional-images {
-      img {
-        width: 140px;
-        cursor: pointer;
-      }
     }
   }
 </style>

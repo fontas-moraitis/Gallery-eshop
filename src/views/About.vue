@@ -33,7 +33,7 @@
       <router-link :to="{ name: 'Home' }">
         <div class="error-wrapper">
           <img src="@/assets/broken-pot.jpg" alt="broken pot">
-          <p class="error-text">something went wrong, click here to go home</p>
+          <button class="error-text button button--light">something went wrong, click here to go home</button>
         </div>
       </router-link>
     </template>
