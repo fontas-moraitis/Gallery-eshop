@@ -7,7 +7,7 @@
     </div>
     <!-- otherwise show items -->
     <div class="cart-wrapper__cart" v-else>
-      <p class="page-header">your bag contains:</p>
+      <p class="page-header self-positioned">your bag contains:</p>
       <div class="bag-row heavy">
         <p>Product</p>
         <p>Details</p>
@@ -20,7 +20,7 @@
         :key="index"
         class="bag-row bag-row-colored"
       >
-        <div class="product-wrapper"><img :src="product.image" :alt="product.title"></div>
+        <div class="image-wrapper"><img :src="product.image" :alt="product.title"></div>
         <div><span class="medium">{{product.title}}</span> | {{product.dimensions}} cm | {{product.weight}} kg</div>
         <QuantityInput
           :value="product.quantity"
@@ -47,7 +47,7 @@
       <ContactForm
        v-if="showContactForm"
        :totalPrice="totalPrice"
-       @cancel-submition="showContactForm = false"
+       @cancel-submition="closeContactForm"
       />
     </div>
   </div>
@@ -96,6 +96,11 @@ export default {
     },
     sendRequest () {
       this.showContactForm = true
+      document.documentElement.classList.add('overflow-hidden')
+    },
+    closeContactForm () {
+      this.showContactForm = false
+      document.documentElement.classList.remove('overflow-hidden')
     }
   }
 }
@@ -123,6 +128,10 @@ export default {
     &__cart {
       display: flex;
       flex-direction: column;
+      padding: 0 $pad-medium;
+      .self-positioned {
+        text-align: start;
+      }
       .bag-row {
         max-width: 1400px;
         min-height: 100px;
@@ -135,7 +144,7 @@ export default {
         border-bottom: 1px solid $beize;
         line-height: 1.5;
         font-size: $font-xsmall;
-        .product-wrapper {
+        .image-wrapper {
           img {
             width: 80px;
           }
@@ -156,4 +165,10 @@ export default {
       }
     }
   }
+
+@media screen and (max-width: 520px) {
+  .image-wrapper {
+    display: none;
+  }
+}
 </style>

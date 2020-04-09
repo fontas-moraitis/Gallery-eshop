@@ -59,12 +59,12 @@ export default {
       min-width: 1024px;
       /* Set up proportionate scaling */
       width: 100%;
-      height: auto;
+      height: 100%;
       visibility: hidden;
       opacity: 0;
       transition: all 6000ms ease;
       animation: sliding 20s linear infinite;
-      filter: brightness(.9);
+      filter: brightness(.85);
     }
   }
   &__hero-text {
@@ -84,6 +84,20 @@ export default {
   .subTitle {
     @include subtitle-special;
     color: $white;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .main-gallery__hero-img {
+    img {
+      object-fit: cover;
+      /* positioned top left of the content box */
+      object-position: 100% 100%;
+      position: absolute;
+      /* Set rules to fill background */
+      min-height: 100%;
+      /* Set up proportionate scaling */
+    }
   }
 }
 </style>

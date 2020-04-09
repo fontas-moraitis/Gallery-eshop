@@ -74,6 +74,7 @@ export default {
   .intro-wrapper {
     max-width: 920px;
     margin: 5% 0;
+    padding: 0 $pad-medium;
     &__artist {
       display: flex;
       align-items: center;
@@ -115,6 +116,53 @@ export default {
       letter-spacing: 1.1px;
       text-align: center;
       color: dimgrey;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    .intro-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 920px;
+      margin: 0;
+      padding: 0;
+      &__artist {
+        @include flex-center-column;
+        height: 100%;
+        margin-bottom: 0;
+        img {
+          height: 100%;
+          width: 100%;
+          margin-right: 0;
+          margin: $marg-large 0;
+        }
+        .text-wrapper {
+          width: 100vw;
+          height: 200px;
+          display: flex;
+          flex-direction: column;
+          margin: $marg-xlarge 0;
+          padding: 0 $pad-medium;
+        }
+      }
+      &__studio {
+        @include flex-center-column;
+        height: 100%;
+        .text-wrapper {
+          order: 2;
+          margin: $marg-xlarge 0;
+          padding: 0 $pad-medium;
+        }
+        img {
+          height: 100%;
+          width: 100%;
+          margin-left: 0;
+          order: 1;
+          margin: $marg-large 0;
+        }
+      }
     }
   }
 </style>

@@ -1,31 +1,32 @@
 <template>
   <div class="form-wrapper">
-    <h1 class="page-header mb-xxlarge">send request to artist</h1>
+    <h1 class="page-header mb-xlarge">send request to artist</h1>
     <form
       action="https://formspree.io/FORM_ID"
       method="POST"
     >
-    <label
-      v-for="item in cartItems"
-      :key="item.id"
-      class="item"
-    >
-      <img :src="item.image" :alt="item.title" /><span>{{ item.title }}</span>x<span>{{ item.quantity }}</span>
-    </label>
+      <label
+        v-for="item in cartItems"
+        :key="item.id"
+        class="item"
+      >
+        <img :src="item.image" :alt="item.title" /><span>{{ item.title }}</span>x<span>{{ item.quantity }}</span>
+      </label>
+      <label class="total medium">total: {{ totalPrice | currency }}</label>
       <label>
-        Your Name:
-        <input type="text" name="name">
+        <input type="text" name="name" placeholder="Your name*">
       </label>
       <label>
-        Your Email:
-        <input type="email" name="_replyto">
+        <input type="email" name="_replyto" placeholder="Your email*">
       </label>
       <label>
-        Message:
-        <textarea name="message"></textarea>
+        <input type="address" name="address" placeholder="Your address*">
       </label>
-      <button class="button" @click.prevent="cancelSubmition"> cancel request </button>
-      <input type="submit" value="Send" class="button">
+      <label>
+        <textarea name="message" placeholder="Leave a message for the artist*"></textarea>
+      </label>
+      <input type="submit" value="Send Request" class="input-button input-button--dark">
+      <input type="button" value="Cancel Request" @click.prevent="cancelSubmition" class="input-button">
     </form>
   </div>
 </template>
@@ -36,7 +37,10 @@ import { mapState } from 'vuex'
 export default {
   name: 'ContactForm',
   props: {
-    totalPrice: Number
+    totalPrice: {
+      type: Number,
+      required: true
+    }
   },
   computed: {
     ...mapState({
@@ -53,46 +57,84 @@ export default {
 
 <style scoped lang="scss">
   .form-wrapper {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: 5;
-    overflow: hidden;
-    background-color: $offwhite;
-    @include flex-center-column;
-    form {
-    min-width: 720px;
+    background: rgba(240, 240, 240, .8);
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: $pad-medium;
+    form {
+    // min-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    background: $white;
+    padding: $pad-xlarge;
     label {
-      margin: $marg-small;
+      margin: $marg-small 0;
+      width: 70%;
     }
     input {
-      margin: $marg-small;
+      width: 100%;
       padding: 6px $pad-small;
-      border: .5px $highlight solid;
+      border: .5px $black solid;
       border-radius: 2px;
+      cursor: pointer;
       background-color: $beize;
-      // box-shadow: inset 1px 1px 2px rgba(125, 125, 125, .2), inset -2px -2px 3px rgba(255, 255, 255, .9);
+      color:#8a97a0;
+      -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
       &:focus {
         outline: none;
-      }
-      button: {
-        margin-top: $marg-xlarge;
       }
     }
   }
 
   .item {
-      display: flex;
-      max-width: 240px;
-      justify-content: space-between;
-      align-items: center;
-      img {
-        width: 60px;
+    display: flex;
+    // min-width: 240px;
+    // max-width: 50%;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      width: 40px;
+    }
+  }
+  .total {
+    text-align: center;
+    padding: $pad-small 0;
+    border-bottom: 1px solid $black;
+  }
+  .input-button {
+    border: 1px solid $black;
+    color: $black;
+    background: $white;
+    margin: $marg-small 0;
+  }
+  .input-button--dark {
+    color: $white;
+    background: $black;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .form-wrapper {
+    form {
+      width: 90%;
+      label {
+        width: 100%;
+      }
+      input {
+        width: auto;
       }
     }
   }
+}
 </style>
