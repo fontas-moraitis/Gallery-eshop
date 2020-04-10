@@ -70,7 +70,7 @@ export default {
     align-items: center;
     padding: $pad-medium;
     form {
-    // min-width: 720px;
+    min-width: 720px;
     display: flex;
     flex-direction: column;
     align-items: center;
