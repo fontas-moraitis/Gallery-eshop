@@ -12,7 +12,6 @@
    <div class="main-gallery__hero-text">
      <p class="title">{{cmsMainGallery[currentIndex].title}}</p>
      <p class="subTitle">{{cmsMainGallery[currentIndex].subTitle}}</p>
-
    </div>
   </div>
 </template>
@@ -51,13 +50,10 @@ export default {
       overflow: hidden;
       img {
       object-fit: cover;
-      /* positioned top left of the content box */
       object-position: 0 0;
       position: absolute;
-      /* Set rules to fill background */
       min-height: 100%;
       min-width: 1024px;
-      /* Set up proportionate scaling */
       width: 100%;
       height: 100%;
       visibility: hidden;
@@ -84,20 +80,6 @@ export default {
   .subTitle {
     @include subtitle-special;
     color: $white;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  .main-gallery__hero-img {
-    img {
-      object-fit: cover;
-      /* positioned top left of the content box */
-      object-position: 100% 100%;
-      position: absolute;
-      /* Set rules to fill background */
-      min-height: 100%;
-      /* Set up proportionate scaling */
-    }
   }
 }
 </style>

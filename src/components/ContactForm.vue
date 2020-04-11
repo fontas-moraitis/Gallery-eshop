@@ -126,10 +126,13 @@ export default {
 
 @media screen and (max-width: 520px) {
   .form-wrapper {
+    .page-header {
+      margin-bottom: $marg-xxlarge;
+    }
     form {
       width: 90%;
       label {
-        width: 100%;
+        width: 45%;
       }
       input {
         width: auto;

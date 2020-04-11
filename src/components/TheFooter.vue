@@ -3,7 +3,7 @@
     <div class="app-footer__container">
       <div class="social-container">
         <p class="social-title mb-medium medium">find us on social media:</p>
-        <a class="insta-link" href="https://www.instagram.com/stavrosperakis/" target="blank">instagram</a>
+        <a href="https://www.instagram.com/stavrosperakis/" target="blank" class="insta-link">instagram</a>
       </div>
       <div class="links-container">
         <router-link class="router-link" :to="{ name: 'Home' }">home</router-link>
