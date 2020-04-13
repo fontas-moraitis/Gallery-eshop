@@ -22,12 +22,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .single-product {
+    margin: 0 $marg-xxsmall;
   .image-container > a > img {
      width: 320px;
      margin-bottom: $marg-small;
      cursor: pointer;
   }
-
   .image-container {
     display: flex;
     flex-direction: column;
@@ -47,4 +48,5 @@ export default {
       }
     }
   }
+}
 </style>

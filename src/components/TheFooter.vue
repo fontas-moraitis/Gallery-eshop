@@ -74,7 +74,7 @@
 
 @media screen and (max-width: 520px) {
   .app-footer {
-    margin-top: $marg-medium;
+    margin-top: $marg-xlarge;
   }
 }
 </style>

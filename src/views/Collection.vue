@@ -68,10 +68,10 @@ export default {
 <style lang="scss" scoped>
   .collection{
     &__expo {
-      max-width: 1120px;
+      max-width: 1200px;
       display: flex;
       flex-flow: row wrap;
-      justify-content: center;
+      justify-content: space-evenly;
     }
   }
 </style>

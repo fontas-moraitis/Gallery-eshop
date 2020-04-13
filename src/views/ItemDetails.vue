@@ -237,65 +237,65 @@ export default {
 
 @media screen and (max-width: 520px) {
     .item-wrapper {
-    @include flex-center-column;
-    width: 100vw;
-    height: 100%;
-    padding: 0 $pad-medium;
-    &__img {
-      width: 100vw;
-      margin-right: 0;
-      margin-bottom: $marg-medium;
-    }
-    .additional-images-wrapper {
-      display: flex;
-      flex-direction: row;
+      @include flex-center-column;
       width: 100vw;
       height: 100%;
-      justify-content: space-evenly;
-      margin: $marg-medium;
-      // flex-shrink: 1; /* default 1 */
-      .additional-images {
-        width: 30%;
-        img {
-          width: 100%;
-          cursor: pointer;
-        }
+      padding: 0 $pad-large;
+      &__img {
+        width: 100vw;
+        margin-right: 0;
+        margin-bottom: $marg-medium;
       }
-    }
-    &__text {
-      display: flex;
-      flex-direction: column;
-      .item-title {
-        font-size: $font-large;
-        margin-bottom: $marg-small;
-      }
-      .item-price {
-        font-weight: $font-normal;
-        margin: $marg-xlarge 0 $marg-xxlarge 0;
-        .price-info {
-          font-size: $font-xxsmall;
-        }
-      }
-      .item-info-title {
-        margin-bottom: $marg-small;
-        font-size: $font-xsmall;
-      }
-      .item-info {
-        margin-bottom: $marg-xxsmall;
-        font-size: $font-xsmall;
-        letter-spacing: 1.1px;
-      }
-      .item-desc {
-        font-weight: $font-thin;
-        letter-spacing: 1px;
-        line-height: 1.5;
-        margin: $marg-xsmall 0 $marg-xxlarge 0;
-      }
-      .item-buttons {
-        width: 100%;
+      .additional-images-wrapper {
         display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 100%;
+        justify-content: space-evenly;
+        margin: $marg-medium;
+        // flex-shrink: 1; /* default 1 */
+        .additional-images {
+          width: 30%;
+          img {
+            width: 100%;
+            cursor: pointer;
+          }
+        }
       }
-    }
+      &__text {
+        display: flex;
+        flex-direction: column;
+        .item-title {
+          font-size: $font-large;
+          margin-bottom: $marg-small;
+        }
+        .item-price {
+          font-weight: $font-normal;
+          margin: $marg-xlarge 0 $marg-xxlarge 0;
+          .price-info {
+            font-size: $font-xxsmall;
+          }
+        }
+        .item-info-title {
+          margin-bottom: $marg-small;
+          font-size: $font-xsmall;
+        }
+        .item-info {
+          margin-bottom: $marg-xxsmall;
+          font-size: $font-xsmall;
+          letter-spacing: 1.1px;
+        }
+        .item-desc {
+          font-weight: $font-thin;
+          letter-spacing: 1px;
+          line-height: 1.5;
+          margin: $marg-xsmall 0 $marg-xxlarge 0;
+        }
+        .item-buttons {
+          width: 100%;
+          display: flex;
+        }
+      }
   }
 }
 </style>
