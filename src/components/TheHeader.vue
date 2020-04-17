@@ -71,23 +71,25 @@ export default {
     justify-content: center;
     align-items: center;
     .cart-svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       margin-left: $marg-xsmall;
     }
     .cart-number {
-      font-size: 10px;
+      font-size: 12px;
+      font-weight: 500;
       position: absolute;
       top: -14px;
       right: -8px;
       z-index: 3;
-      width: 16px;
-      height: 16px;
-      border: .8px solid black;
+      width: 18px;
+      height: 18px;
+      border: 1px solid black;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
   }
 

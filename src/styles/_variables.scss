@@ -28,29 +28,29 @@ $marg-xxlarge: 68px;
 $marg-xxxlarge: 120px;
 
 // Font sizes
-$font-xxxsmall: 10px;
-$font-xxsmall: 12px;
-$font-xsmall: 14px;
-$font-small: 16px;
-$font-normal: 18px;
-$font-large: 32px;
+$font-xxxsmall: 12px;
+$font-xxsmall: 14px;
+$font-xsmall: 16px;
+$font-small: 18px;
+$font-normal: 20px;
+$font-large: 42px;
 $font-xlarge: 68px;
 
 $font-thin: 200;
 $font-regular: 300;
-$font-medium: 500;
-$font-thick: 800;
+$font-medium: 600;
+$font-thick: 700;
 
 @mixin title-standard {
-  font-size: $font-small;
-  font-weight: $font-thin;
+  font-size: $font-normal;
+  font-weight: $font-medium;
   text-decoration: none;
   letter-spacing: 1.5px;
 }
 
 @mixin title {
   font-size: $font-small;
-  font-weight: $font-thin;
+  font-weight: $font-normal;
   text-decoration: none;
   margin-bottom: $marg-small;
 }
@@ -58,7 +58,6 @@ $font-thick: 800;
 @mixin title-price {
   font-size: 15px;
   text-decoration: none;
-  margin-bottom: $marg-small;
   color: rgb(38, 38, 38);
   letter-spacing: .09px;
 }
@@ -77,7 +76,7 @@ $font-thick: 800;
 @mixin title-special {
   // font-family: 'Libre Baskerville', serif;
   font-size: 48px;
-  font-weight: $font-regular;
+  font-weight: $font-thin;
   letter-spacing: 1px;
   text-align: center;  
 }

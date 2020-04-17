@@ -11,7 +11,7 @@
           <div class="container container--column">
             <div class="bread-cramp">
               <router-link :to="{ name: 'Home' }">home</router-link> /
-              <router-link :to="{ name: 'Collection' }">collection</router-link> /
+              <router-link :to="{ name: 'Collection' }">shop</router-link> /
               <span class="medium">{{comProduct.prodTitle}}</span>
             </div>
             <div class="item-wrapper">
@@ -214,7 +214,7 @@ export default {
         letter-spacing: 1.1px;
       }
       .item-desc {
-        font-weight: $font-thin;
+        font-weight: $font-regular;
         letter-spacing: 1px;
         line-height: 1.5;
         margin: $marg-xsmall 0 $marg-xxlarge 0;

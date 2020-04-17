@@ -1,12 +1,14 @@
 <template>
   <div class="single-product">
-    <div class="container">
+    <div>
       <div class="image-container">
-        <router-link :to="{ name: 'ItemDetails', params: { id: product._uid } }" :key="$route.path"><img :src="product.image" :alt="product.prodTitle"></router-link>
-        <div class="image-footer ghost">
-          <p class="image-footer__title">{{ product.prodTitle }}</p>
-          <p class="image-footer__price medium">{{ product.prodPrice | currency }}</p>
-        </div>
+        <img :src="product.image" :alt="product.prodTitle">
+        <router-link :to="{ name: 'ItemDetails', params: { id: product._uid } }" :key="$route.path">
+          <div class="image-footer">
+            <p class="image-footer__title">{{ product.prodTitle }}</p>
+            <p class="image-footer__price medium">{{ product.prodPrice | currency }}</p>
+          </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -23,10 +25,9 @@ export default {
 
 <style lang="scss" scoped>
   .single-product {
-    margin: 0 $marg-xxsmall;
-  .image-container > a > img {
+    margin: $marg-xlarge 0;
+  .image-container > img {
      width: 320px;
-     margin-bottom: $marg-small;
      cursor: pointer;
   }
   .image-container {
@@ -34,11 +35,21 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     margin: 0 $marg-large;
+    position: relative;
     .image-footer {
+      @include flex-center-column;
+      position: absolute;
+      top: 0;
       width: 100%;
-      border-top: .7px solid lightgrey;
-      @include flex-between;
-      padding: $pad-xsmall 0;
+      height: 100%;
+      background: rgba(255, 255, 255, .7);
+      backdrop-filter: blur(5px);
+      opacity: 0;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+        border: 1px solid white;
+      }
       &__title {
         @include title;
         text-transform: uppercase;

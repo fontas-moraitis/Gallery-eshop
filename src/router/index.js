@@ -15,12 +15,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "About" */ '../views/About')
   },
   {
-    path: '/collection',
+    path: '/shop',
     name: 'Collection',
     component: () => import(/* webpackChunkName: "Collection" */ '../views/Collection')
   },
   {
-    path: '/collection/:id',
+    path: '/shop/:id',
     name: 'ItemDetails',
     props: true,
     component: () => import(/* webpackChunkName: "ItemDetails" */ '../views/ItemDetails')
