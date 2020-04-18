@@ -1,5 +1,5 @@
 <template>
-  <div class="main-gallery wrapper">
+  <div class="main-gallery wrapper" v-on:keydown.right="imageFlippingFwd">
    <div class="main-gallery__hero-img wrapper">
      <img
       v-for="(item, index) in cmsMainGallery"
@@ -13,6 +13,8 @@
      <p class="title">{{cmsMainGallery[currentIndex].title}}</p>
      <p class="subTitle">{{cmsMainGallery[currentIndex].subTitle}}</p>
    </div>
+   <img src="@/assets/left.svg" alt="arrow pointing left" @click="imageFlippingBwd" class="previous" />
+   <img src="@/assets/right.svg" alt="arrow pointing right" @click="imageFlippingFwd" class="next" />
   </div>
 </template>
 
@@ -29,14 +31,25 @@ export default {
   },
   created () {
     setInterval(function () {
+      this.imageFlippingFwd()
+    }.bind(this), 8000)
+  },
+  methods: {
+    imageFlippingFwd () {
       if (this.currentIndex < (this.cmsMainGallery.length - 1)) {
         this.currentIndex++
       } else if (this.currentIndex === (this.cmsMainGallery.length - 1)) {
         this.currentIndex = 0
       }
-    }.bind(this), 8000)
-  },
-  methods: {}
+    },
+    imageFlippingBwd () {
+      if (this.currentIndex > 0) {
+        this.currentIndex--
+      } else if (this.currentIndex === 0) {
+        this.currentIndex = this.cmsMainGallery.length - 1
+      }
+    }
+  }
 }
 </script>
 
@@ -58,9 +71,9 @@ export default {
       height: 100%;
       visibility: hidden;
       opacity: 0;
-      transition: all 6000ms ease;
-      animation: sliding 20s linear infinite;
-      filter: brightness(.70);
+      transition: all 2000ms ease;
+      animation: sliding 25s linear infinite;
+      filter: brightness(.85);
     }
   }
   &__hero-text {
@@ -80,6 +93,24 @@ export default {
   .subTitle {
     @include subtitle-special;
     color: $white;
+  }
+  .next {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .previous {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    cursor: pointer;
   }
 }
 </style>
