@@ -27,7 +27,7 @@ export default {
   .single-product {
     margin: $marg-xlarge 0;
   .image-container > img {
-     width: 320px;
+     width: 280px;
      cursor: pointer;
   }
   .image-container {

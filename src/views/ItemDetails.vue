@@ -6,7 +6,6 @@
       </div>
     </template>
     <template v-else-if="product.data">
-      <div>
         <div class="wrapper">
           <div class="container container--column">
             <div class="bread-cramp">
@@ -31,6 +30,7 @@
                   :key="mainImage"
                   :src="mainImage"
                   :alt="comProduct.prodTitle"
+                  @click="showingPopUp = !showingPopUp"
                 >
               </div>
               <div class="item-wrapper__text">
@@ -58,7 +58,12 @@
             <TheFooter />
           </div>
         </div>
-      </div>
+        <PopUpImage
+          v-if="showingPopUp"
+          :mainImage="mainImage"
+          :imageTitle="comProduct.prodTitle"
+          v-on:closePopUp="showingPopUp = !showingPopUp"
+        />
     </template>
     <template v-else>
       <router-link :to="{ name: 'Home' }">
@@ -76,11 +81,13 @@ import { mapState, mapMutations } from 'vuex'
 
 import TheFooter from '@/components/TheFooter.vue'
 import QuantityInput from '@/components/QuantityInput.vue'
+import PopUpImage from '@/components/PopUpImage.vue'
 
 export default {
   components: {
     TheFooter,
-    QuantityInput
+    QuantityInput,
+    PopUpImage
   },
   data () {
     return {
@@ -90,7 +97,8 @@ export default {
         error: null
       },
       quantity: 1,
-      mainImage: String
+      mainImage: String,
+      showingPopUp: false
     }
   },
   props: {
@@ -175,6 +183,7 @@ export default {
     &__img {
       width: 480px;
       margin-right: $marg-xlarge;
+      cursor: pointer;
     }
     .additional-images-wrapper {
       display: flex;

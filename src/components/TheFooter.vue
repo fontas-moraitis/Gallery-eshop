@@ -17,9 +17,9 @@
     width: 100vw;
     height: 220px;
     background: $beize;
-    color: salmon;
+    color: $black;
     padding: $pad-xlarge 0;
-    // margin-top: $marg-xxlarge;
+    margin-top: $marg-xxxlarge;
     font-size: $font-xxsmall;
     font-weight: $font-normal;
     border-top: 2px solid white;
@@ -36,7 +36,7 @@
         justify-content: space-between;
         .insta-link {
           text-decoration: none;
-          color: salmon;
+          color: $black;
           font-size: $font-small;
           margin: $marg-small 0;
           &:hover {
@@ -51,7 +51,7 @@
       display: flex;
       a {
        margin: 0 6px;
-       color: salmon;
+       color: $black;
       }
     }
   }
