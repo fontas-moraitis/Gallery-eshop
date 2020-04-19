@@ -1,5 +1,5 @@
 <template>
-  <div class="main-gallery wrapper" v-on:keydown.right="imageFlippingFwd">
+  <div class="main-gallery wrapper">
    <div class="main-gallery__hero-img wrapper">
      <img
       v-for="(item, index) in cmsMainGallery"
@@ -15,6 +15,9 @@
    </div>
    <img src="@/assets/left.svg" alt="arrow pointing left" @click="imageFlippingBwd" class="previous" />
    <img src="@/assets/right.svg" alt="arrow pointing right" @click="imageFlippingFwd" class="next" />
+   <div class="image-indicator">
+     <div v-for="(circle, index) in cmsMainGallery.length" :key="index" class="circle" :class="[index == currentIndex ? 'circle--filled' : '']"></div>
+   </div>
   </div>
 </template>
 
@@ -34,6 +37,9 @@ export default {
       this.imageFlippingFwd()
     }.bind(this), 8000)
   },
+  mounted () {
+    document.addEventListener('keydown', event => this.keyboardNavigation())
+  },
   methods: {
     imageFlippingFwd () {
       if (this.currentIndex < (this.cmsMainGallery.length - 1)) {
@@ -47,6 +53,15 @@ export default {
         this.currentIndex--
       } else if (this.currentIndex === 0) {
         this.currentIndex = this.cmsMainGallery.length - 1
+      }
+    },
+    keyboardNavigation () {
+      if (event.keyCode === 39) {
+        console.log('right')
+        this.imageFlippingFwd()
+      } else if (event.keyCode === 37) {
+        console.log('left')
+        this.imageFlippingBwd()
       }
     }
   }
@@ -98,8 +113,8 @@ export default {
     position: fixed;
     top: 50%;
     right: 0;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     z-index: 10;
     cursor: pointer;
   }
@@ -107,10 +122,30 @@ export default {
     position: fixed;
     top: 50%;
     left: 0;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     z-index: 10;
     cursor: pointer;
+  }
+  .image-indicator {
+    @include flex-between;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    z-index: 10;
+    padding: $pad-small;
+    .circle {
+      width: 16px;
+      height: 16px;
+      border: 1px solid white;
+      border-radius: 50%;
+      margin: 0 $marg-xxxsmall;
+    }
+    .circle--filled {
+      background: $white;
+    }
   }
 }
 </style>

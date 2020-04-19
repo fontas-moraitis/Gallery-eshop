@@ -105,11 +105,11 @@ background-color: $black;
 }
 
 .shake {
-  animation: shake 1s ease forwards;
+  animation: shake 1s ease-in-out forwards;
 }
 
 .ghost {
-  animation: ghost 2s ease forwards;
+  animation: ghost 2s ease-in-out forwards;
 }
 
 /* TRANSITION CLASSES */

@@ -5,6 +5,7 @@
       class="pop-up-image"
     >
       <img :src="mainImage" :alt="imageTitle">
+      <p class="pop-up-image__image-title">{{imageTitle}}</p>
     </div>
 </template>
 
@@ -32,7 +33,7 @@ export default {
 <style scoped lang="scss">
   // pop-up image positioned in the middle of the screen
   .pop-up-image {
-    @include flex-center;
+    @include flex-center-column;
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -44,6 +45,10 @@ export default {
     cursor: pointer;
     img {
       width: 800px
+    }
+    &__image-title {
+      @include title;
+      margin-top: $marg-medium;
     }
   }
 </style>
