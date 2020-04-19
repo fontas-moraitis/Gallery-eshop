@@ -26,16 +26,16 @@ export default {
 <style lang="scss" scoped>
   .single-product {
     margin: $marg-xlarge 0;
-  .image-container > img {
-     width: 280px;
-     cursor: pointer;
-  }
   .image-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin: 0 $marg-large;
     position: relative;
+    img {
+      width: 280px;
+      cursor: pointer;
+    }
     .image-footer {
       @include flex-center-column;
       position: absolute;
@@ -57,6 +57,14 @@ export default {
       &__price {
         @include title-price;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .image-container {
+    img {
+      width: 320px;
     }
   }
 }

@@ -148,4 +148,16 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 750px) {
+  .next, .previous {
+    display: none;
+  }
+  image-indicator {
+    .circle {
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
 </style>

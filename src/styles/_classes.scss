@@ -179,3 +179,9 @@ background-color: $black;
 .overflow-hidden {
   overflow: hidden;
 }
+
+@media screen and (max-width: 750px) {
+  .page-header {
+    font-size: $font-normal;
+  }
+}

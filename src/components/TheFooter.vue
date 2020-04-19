@@ -60,6 +60,15 @@
 @media screen and (max-width: 520px) {
   .app-footer {
     margin-top: $marg-xxlarge;
+    &__container {
+      font-size: $font-xxxsmall;
+      text-align: center;
+      .social-container {
+        .insta-link {
+          font-size: $font-xxxsmall;
+        }
+      }
+    }
   }
 }
 </style>

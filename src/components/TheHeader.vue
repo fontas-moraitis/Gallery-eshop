@@ -101,12 +101,13 @@ export default {
     .app-header {
       padding: $pad-large;
       &__logo {
-        font-size: $font-small;
-        letter-spacing: 1.4px;
+        font-size: $font-xxsmall;
+        letter-spacing: 1.2px;
       }
       &__links {
         .router-link {
-          margin-left: $marg-medium;
+          font-size: $font-xsmall;
+          margin-left: $marg-xxsmall;
         }
     }
   }

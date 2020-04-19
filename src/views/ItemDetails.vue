@@ -30,7 +30,7 @@
                   :key="mainImage"
                   :src="mainImage"
                   :alt="comProduct.prodTitle"
-                  @click="showingPopUp = !showingPopUp"
+                  @click="handlePopUp"
                 >
               </div>
               <div class="item-wrapper__text">
@@ -113,6 +113,12 @@ export default {
     }),
     comProduct () {
       return this.product.data
+    },
+    isImageClickable () {
+      if (window.innerWidth > 768) {
+        return true
+      }
+      return false
     }
   },
   methods: {
@@ -166,6 +172,11 @@ export default {
     },
     focusImage (index) {
       this.mainImage = this.comProduct.additionalImages[index].filename
+    },
+    handlePopUp () {
+      if (this.isImageClickable) {
+        this.showingPopUp = !this.showingPopUp
+      }
     }
   },
   created () {

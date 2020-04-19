@@ -170,5 +170,10 @@ export default {
   .image-wrapper {
     display: none;
   }
+  .cart-wrapper {
+    &__empty-cart {
+      padding: $pad-xsmall;
+    }
+  }
 }
 </style>
