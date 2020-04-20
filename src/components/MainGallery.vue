@@ -11,7 +11,7 @@
    </div>
    <div class="main-gallery__hero-text">
      <p class="title">{{cmsMainGallery[currentIndex].title}}</p>
-     <p class="subTitle">{{cmsMainGallery[currentIndex].subTitle}}</p>
+     <p class="subtitle">{{cmsMainGallery[currentIndex].subTitle}}</p>
    </div>
    <img src="@/assets/left.svg" alt="arrow pointing left" @click="imageFlippingBwd" class="previous" />
    <img src="@/assets/right.svg" alt="arrow pointing right" @click="imageFlippingFwd" class="next" />
@@ -105,7 +105,7 @@ export default {
     color: $white;
     margin-bottom: $marg-small;
   }
-  .subTitle {
+  .subtitle {
     @include subtitle-special;
     color: $white;
   }
@@ -149,14 +149,27 @@ export default {
   }
 }
 
-@media screen and (max-width: 750px) {
-  .next, .previous {
+@media screen and (max-width: 768px) {
+  .main-gallery {
+    &__hero-text {
+      max-width: 80%;
+      top: 80%;
+      .title {
+        font-size: $font-normal;
+        font-weight: $font-thick;
+      }
+      .subtitle {
+        font-size: $font-xxsmall;
+      }
+    }
+    .next, .previous {
     display: none;
   }
-  image-indicator {
-    .circle {
-      width: 8px;
-      height: 8px;
+    .image-indicator {
+      .circle {
+        width: 10px;
+        height: 10px;
+      }
     }
   }
 }

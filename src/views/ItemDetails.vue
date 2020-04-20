@@ -287,11 +287,11 @@ export default {
         flex-direction: column;
         .item-title {
           font-size: $font-large;
-          margin-bottom: $marg-small;
+          margin-top: $marg-small;
         }
         .item-price {
           font-weight: $font-normal;
-          margin: $marg-xlarge 0 $marg-xxlarge 0;
+          margin: $marg-large 0 $marg-xxlarge 0;
           .price-info {
             font-size: $font-xxsmall;
           }
@@ -309,7 +309,7 @@ export default {
           font-weight: $font-thin;
           letter-spacing: 1px;
           line-height: 1.5;
-          margin: $marg-xsmall 0 $marg-xxlarge 0;
+          margin: $marg-xsmall 0 $marg-xlarge 0;
         }
         .item-buttons {
           width: 100%;
