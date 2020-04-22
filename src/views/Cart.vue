@@ -10,7 +10,7 @@
       <p class="page-header self-positioned">your bag contains:</p>
       <div class="bag-row heavy">
         <p>Product</p>
-        <p>Details</p>
+        <p class="mobile-hide">Details</p>
         <p>Quantity</p>
         <p>Price</p>
         <p>Subtotal</p>
@@ -166,14 +166,36 @@ export default {
     }
   }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 768px) {
   .image-wrapper {
     display: none;
   }
   .cart-wrapper {
+    padding: 0;
+    font-size: $font-xxxsmall;
     &__empty-cart {
       padding: $pad-xsmall;
     }
+    &__cart {
+      .bag-row {
+        padding: $pad-small;
+        border-bottom: 1px solid $beize;
+        line-height: 1;
+        font-size: $font-xxsmall;
+        grid-template-columns: 1fr .5fr 1fr 1fr .4fr;
+        .total-text {
+          grid-column: 3 / span 1;
+          font-size: $font-xxxsmall;
+        }
+        .total-price {
+          grid-column: 4 / span 1;
+          font-size: $font-xxxsmall;
+        }
+      }
+    }
+  }
+  .mobile-hide {
+    display: none;
   }
 }
 </style>

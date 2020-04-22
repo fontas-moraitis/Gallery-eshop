@@ -31,4 +31,11 @@ export default {
       outline: none;
     }
   }
+
+@media screen and (max-width: 768px) {
+  .quantity-input {
+    height: 24px;
+    width: 24px;
+  }
+}
 </style>
