@@ -149,8 +149,8 @@ export default {
     z-index: 10;
     padding: $pad-small;
     .circle {
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       border: 1px solid white;
       border-radius: 50%;
       margin: 0 $marg-xxxsmall;
