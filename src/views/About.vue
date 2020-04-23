@@ -11,18 +11,18 @@
           <p class="page-header">about the artist</p>
           <div class="intro-wrapper">
             <div class="intro-wrapper__artist">
-              <img :src="cmsAboutData[0].image_stavros" :alt="cmsAboutData[0].title">
-              <div class="text-wrapper">
+              <img :src="cmsAboutData[0].image_stavros" :alt="cmsAboutData[0].title" class="ghost--left">
+              <div class="text-wrapper ghost--right">
                 <p class="title">{{cmsAboutData[0].title}}</p>
                 <p class="text">{{cmsAboutData[0].bio}}</p>
               </div>
             </div>
             <div class="intro-wrapper__studio">
-              <div class="text-wrapper">
+              <div class="text-wrapper ghost--left">
                 <p class="title">{{cmsAboutData[0].studio}}</p>
                 <p class="text">{{cmsAboutData[0].aboutStudio}}</p>
               </div>
-              <img :src="cmsAboutData[0].image_studio" :alt="cmsAboutData[0].title">
+              <img :src="cmsAboutData[0].image_studio" :alt="cmsAboutData[0].title" class="ghost--right">
             </div>
           </div>
           <TheFooter />

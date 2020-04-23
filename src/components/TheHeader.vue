@@ -45,7 +45,8 @@ export default {
       height: $header-height;
       @include flex-between;
       z-index: 2 !important;
-      padding: $pad-xxlarge $pad-xxxlarge $pad-xxlarge $pad-xxlarge;
+      padding: $pad-xxlarge;
+      animation: ghost 3000ms ease-in-out;
       &__logo {
         @include title-standard;
         color: inherit;

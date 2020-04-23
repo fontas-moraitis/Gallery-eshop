@@ -7,7 +7,10 @@
     </template>
     <template v-else-if="cmsMainGallery">
       <div class="home">
-        <MainGallery :cmsMainGallery="cmsMainGallery" />
+        <MainGallery
+         :cmsMainGallery="cmsMainGallery"
+         :isKeyboardNav="isKeyboardNav"
+        />
       </div>
     </template>
     <template v-else>
@@ -30,12 +33,22 @@ export default {
   components: {
     MainGallery
   },
+  data () {
+    return {
+      isKeyboardNav: true
+    }
+  },
   computed: {
     ...mapState({
       cmsMainGallery: state => state.homeData.data,
       loading: state => state.homeData.loading,
       error: state => state.homeData.error
     })
+  },
+  beforeRouteLeave (to, from, next) {
+    console.log('route change')
+    this.isKeyboardNav = false
+    next(true)
   },
   methods: {
     ...mapActions([

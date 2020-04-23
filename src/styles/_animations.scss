@@ -27,6 +27,49 @@
 }
 
 @keyframes ghost {
-  0% {opacity: 0}
-  100% {opacity: 1}
+  0% {
+    opacity: 0.1;
+    filter: saturate(0);
+    transform: translateY(-45%);
+   }
+  100% {
+    opacity: 1;
+    filter: saturate(1);
+    transform: translateY(0);
+  }
+}
+
+@keyframes ghost--no-motion {
+  0% {
+    opacity: 0;
+   }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ghost--left {
+  0% {
+    opacity: 0.1;
+    filter: saturate(0);
+    transform: translateX(-35%);
+   }
+  100% {
+    opacity: 1;
+    filter: saturate(1);
+    transform: translateX(0);
+  }
+}
+
+@keyframes ghost--right {
+  0% {
+    opacity: 0.1;
+    filter: saturate(0);
+    transform: translateX(35%);
+   }
+  100% {
+    opacity: 1;
+    filter: saturate(1);
+    transform: translateX(0);
+  }
 }

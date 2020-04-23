@@ -19,14 +19,14 @@
                   v-for="(image, index) in comProduct.additionalImages"
                   :key="index"
                   @click="focusImage(index)"
-                  class="additional-images ghost"
+                  class="additional-images ghost--no-motion"
                 >
                   <img :src="image.filename" :alt="comProduct.prodTitle">
                 </div>
               </div>
               <div>
                 <img
-                  class="item-wrapper__img ghost"
+                  class="item-wrapper__img ghost--no-motion"
                   :key="mainImage"
                   :src="mainImage"
                   :alt="comProduct.prodTitle"
@@ -255,7 +255,7 @@ export default {
     }
   }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 768px) {
     .item-wrapper {
       @include flex-center-column;
       width: 100vw;

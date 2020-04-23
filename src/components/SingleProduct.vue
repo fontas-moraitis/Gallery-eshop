@@ -48,7 +48,7 @@ export default {
       cursor: pointer;
       &:hover {
         opacity: 1;
-        border: 1px solid white;
+        border: 1px solid $highlight;
       }
       &__title {
         @include title;

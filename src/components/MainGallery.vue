@@ -25,7 +25,14 @@
 export default {
   name: 'MainGallery',
   props: {
-    cmsMainGallery: Array
+    cmsMainGallery: {
+      type: Array,
+      required: true
+    },
+    isKeyboardNav: {
+      type: Boolean,
+      required: true
+    }
   },
   data () {
     return {
@@ -56,12 +63,16 @@ export default {
       }
     },
     keyboardNavigation () {
-      if (event.keyCode === 39) {
-        console.log('right')
-        this.imageFlippingFwd()
-      } else if (event.keyCode === 37) {
-        console.log('left')
-        this.imageFlippingBwd()
+      if (this.isKeyboardNav) {
+        if (event.keyCode === 39) {
+          console.log('right')
+          this.imageFlippingFwd()
+        } else if (event.keyCode === 37) {
+          console.log('left')
+          this.imageFlippingBwd()
+        }
+      } else {
+        document.removeEventListener('keydown', event => this.keyboardNavigation())
       }
     }
   }
@@ -99,6 +110,7 @@ export default {
     transform: translate(-50%, -50%);
     z-index: 4;
     max-width: 520px;
+    animation: ghost--no-motion 4000ms ease-in-out;
   }
   .title {
     @include title-special;
@@ -137,8 +149,8 @@ export default {
     z-index: 10;
     padding: $pad-small;
     .circle {
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       border: 1px solid white;
       border-radius: 50%;
       margin: 0 $marg-xxxsmall;

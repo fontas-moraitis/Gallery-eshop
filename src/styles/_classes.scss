@@ -27,14 +27,14 @@
   text-align: center;
   margin: 4% 0 4% 0;
   line-height: 1.2;
-  animation: ghost 2s linear forwards;
+  animation: ghost 900ms linear forwards;
 }
 
 .button {
   position: relative;
   min-width: 100px;
   height: 40px;
-  border: 1px solid black;
+  border: 1px solid $highlight;
   letter-spacing: 1.1px;
   padding: 0 $pad-medium;
   cursor: pointer;
@@ -105,11 +105,23 @@ background-color: $black;
 }
 
 .shake {
-  animation: shake 1s ease-in-out forwards;
+  animation: shake 1000ms ease-in-out forwards;
 }
 
 .ghost {
-  animation: ghost 2s ease-in-out forwards;
+  animation: ghost 900ms ease-in-out forwards;
+}
+
+.ghost--no-motion {
+  animation: ghost--no-motion 1500ms ease-in-out;
+}
+
+.ghost--left {
+  animation: ghost--left 1500ms ease-in-out;
+}
+
+.ghost--right {
+  animation: ghost--right 1500ms ease-in-out;
 }
 
 /* TRANSITION CLASSES */
