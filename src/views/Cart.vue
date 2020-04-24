@@ -21,7 +21,7 @@
         class="bag-row bag-row-colored"
       >
         <div class="image-wrapper"><img :src="product.image" :alt="product.title"></div>
-        <div><span class="medium">{{product.title}}</span> | {{product.dimensions}} cm | {{product.weight}} kg</div>
+        <div><span class="item-info medium">{{product.title}}</span><span>{{product.dimensions}} cm </span><span>{{product.weight}} kg</span></div>
         <QuantityInput
           :value="product.quantity"
           @input="handleQuantity($event, product.id)"
@@ -144,6 +144,9 @@ export default {
         border-bottom: 1px solid $beize;
         line-height: 1.5;
         font-size: $font-xsmall;
+        .item-info {
+          margin: 0 $marg-xsmall;
+        }
         .image-wrapper {
           img {
             width: 80px;
@@ -171,7 +174,6 @@ export default {
     display: none;
   }
   .cart-wrapper {
-    padding: 0;
     font-size: $font-xxxsmall;
     &__empty-cart {
       padding: $pad-xsmall;
@@ -183,6 +185,10 @@ export default {
         line-height: 1;
         font-size: $font-xxsmall;
         grid-template-columns: 1fr .5fr 1fr 1fr .4fr;
+        .item-info {
+          display: flex;
+          flex-direction: column;
+        }
         .total-text {
           grid-column: 3 / span 1;
           font-size: $font-xxxsmall;

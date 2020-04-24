@@ -10,7 +10,7 @@
         :key="item.id"
         class="item"
       >
-        <img :src="item.image" :alt="item.title" /><span>{{ item.title }}</span>x<span>{{ item.quantity }}</span>
+        <img :src="item.image" :alt="item.title" /><span>{{ item.title }}</span><span>{{ item.quantity }}</span>
       </label>
       <label class="total medium">total: {{ totalPrice | currency }}</label>
       <label>
@@ -20,7 +20,7 @@
         <input type="email" name="_replyto" placeholder="Your email*">
       </label>
       <label>
-        <input type="address" name="address" placeholder="Your address*">
+        <input type="address" name="address" placeholder="Delivery address*">
       </label>
       <label>
         <textarea name="message" placeholder="Leave a message for the artist*"></textarea>
@@ -79,10 +79,11 @@ export default {
     padding: $pad-xlarge;
     label {
       margin: $marg-small 0;
-      width: 70%;
+      width: 90%;
+      text-align: center;
     }
     input {
-      width: 100%;
+      width: 90%;
       padding: 6px $pad-small;
       border: .5px $black solid;
       border-radius: 2px;
@@ -95,12 +96,15 @@ export default {
         outline: none;
       }
     }
+    textarea {
+      width: 92%;
+      min-height: 100px;
+    }
   }
 
   .item {
     display: flex;
-    // min-width: 240px;
-    // max-width: 50%;
+    width: 70%;
     justify-content: space-between;
     align-items: center;
     img {
@@ -137,6 +141,15 @@ export default {
       input {
         width: auto;
       }
+    }
+  }
+  .item {
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      width: 30px;
     }
   }
 }

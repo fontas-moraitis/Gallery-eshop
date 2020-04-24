@@ -42,7 +42,7 @@ export default {
   created () {
     setInterval(function () {
       this.imageFlippingFwd()
-    }.bind(this), 8000)
+    }.bind(this), 6000)
   },
   mounted () {
     document.addEventListener('keydown', event => this.keyboardNavigation())
@@ -99,7 +99,7 @@ export default {
       opacity: 0;
       transition: all 2000ms ease;
       animation: sliding 25s linear infinite;
-      filter: brightness(.85);
+      filter: brightness(.80);
     }
   }
   &__hero-text {
@@ -129,6 +129,7 @@ export default {
     height: 30px;
     z-index: 10;
     cursor: pointer;
+    opacity: .5;
   }
   .previous {
     position: fixed;
@@ -138,6 +139,7 @@ export default {
     height: 30px;
     z-index: 10;
     cursor: pointer;
+    opacity: .5;
   }
   .image-indicator {
     @include flex-between;
@@ -149,8 +151,8 @@ export default {
     z-index: 10;
     padding: $pad-small;
     .circle {
-      width: 12px;
-      height: 12px;
+      width: 9px;
+      height: 9px;
       border: 1px solid white;
       border-radius: 50%;
       margin: 0 $marg-xxxsmall;
@@ -179,8 +181,8 @@ export default {
   }
     .image-indicator {
       .circle {
-        width: 10px;
-        height: 10px;
+        width: 7px;
+        height: 7px;
       }
     }
   }
