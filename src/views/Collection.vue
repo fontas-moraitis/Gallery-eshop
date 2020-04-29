@@ -10,6 +10,12 @@
         <div class="wrapper">
           <div class="container container--column">
             <p class="page-header">a journey in form</p>
+            <button
+              v-for="(category, index) in categories"
+              :key="index"
+            >
+             {{category}}
+            </button>
             <div class="collection__expo">
               <SingleProduct
                 v-for="(product, index) in cmsData"
@@ -52,7 +58,14 @@ export default {
     ...mapState({
       cmsData: state => state.collectionData.data,
       loading: state => state.collectionData.loading
-    })
+    }),
+    categories () {
+      const categArray = []
+      this.cmsData.forEach(prod => categArray.push(prod.category))
+      const uniqCateg = [...new Set(categArray.flat())]
+      console.log(uniqCateg)
+      return uniqCateg
+    }
   },
   methods: {
     ...mapActions([
