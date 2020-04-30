@@ -10,15 +10,19 @@
         <div class="wrapper">
           <div class="container container--column">
             <p class="page-header">a journey in form</p>
-            <button
-              v-for="(category, index) in categories"
-              :key="index"
-            >
-             {{category}}
-            </button>
+            <div class="categories-wrapper">
+              <div
+                v-for="(category, index) in filterOptions"
+                :key="index"
+                @click.prevent="activeCategory = category.value"
+                class="categories-wrapper__category"
+              >
+              {{category.text}}
+              </div>
+            </div>
             <div class="collection__expo">
               <SingleProduct
-                v-for="(product, index) in cmsData"
+                v-for="(product, index) in filteredProducts"
                 :key="index"
                 :product="product"
               />
@@ -52,7 +56,9 @@ export default {
     TheFooter
   },
   data () {
-    return {}
+    return {
+      activeCategory: null
+    }
   },
   computed: {
     ...mapState({
@@ -61,10 +67,28 @@ export default {
     }),
     categories () {
       const categArray = []
-      this.cmsData.forEach(prod => categArray.push(prod.category))
+      this.cmsData.forEach(prod => {
+        if (prod.category !== undefined) {
+          categArray.push(prod.category)
+        }
+      })
       const uniqCateg = [...new Set(categArray.flat())]
-      console.log(uniqCateg)
       return uniqCateg
+    },
+    filterOptions () {
+      const categories = this.categories.map(category => ({ text: category, value: category }))
+      return [{ text: 'all', value: null }, ...categories]
+    },
+    filteredProducts () {
+      if (this.activeCategory === null) {
+        return this.cmsData
+      } else {
+        return this.cmsData.filter(product => {
+          if (product.category !== undefined) {
+            return product.category.includes(this.activeCategory)
+          }
+        })
+      }
     }
   },
   methods: {
@@ -79,12 +103,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .collection{
+  .collection {
+    .categories-wrapper {
+      margin-bottom: $marg-xxlarge;
+      display: flex;
+      &__category {
+        margin: 0 $marg-medium;
+        cursor: pointer;
+        &:hover {
+          color: salmon;
+        }
+      }
+    }
     &__expo {
       max-width: 1320px;
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
+      animation: ghost 1s ease-in-out;
     }
   }
 </style>

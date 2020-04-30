@@ -16,10 +16,11 @@
   .app-footer {
     width: 100vw;
     height: 220px;
+    position: absolute;
+    bottom: -220px;
     background: $beize;
     color: $black;
     padding: $pad-xlarge 0;
-    margin-top: $marg-xxxlarge;
     font-size: $font-xxsmall;
     font-weight: $font-normal;
     border-top: 2px solid white;

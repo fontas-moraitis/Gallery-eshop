@@ -28,6 +28,9 @@ export default new Vuex.Store({
       const allCartItems = []
       state.cart.forEach(prod => allCartItems.push(prod.quantity))
       return allCartItems.reduce((a, b) => a + b, 0)
+    },
+    allProducts: state => {
+      return state.collectionData.data
     }
   },
   mutations: {

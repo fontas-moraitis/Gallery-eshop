@@ -48,8 +48,7 @@ export default {
       cursor: pointer;
       &:hover {
         opacity: 1;
-        border-top: 1px solid white;
-        border-left: 1px solid white;
+        border: 1px solid $white;
       }
       &__title {
         @include title;
