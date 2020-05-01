@@ -120,7 +120,6 @@ export default {
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      animation: ghost 1s ease-in-out;
     }
   }
 </style>
