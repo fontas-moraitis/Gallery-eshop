@@ -15,6 +15,6 @@ describe('testing header...', () => {
   })
   
   it('header has all routes', () => {
-    expect(wrapper.findAll('roouter-link')).toHaveLength(4);
+    expect(wrapper.findAll('router-link')).toHaveLength(4);
   })
 })
