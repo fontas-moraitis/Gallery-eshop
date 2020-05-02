@@ -63,6 +63,7 @@
           :mainImage="mainImage"
           :imageTitle="comProduct.prodTitle"
           v-on:closePopUp="showingPopUp = !showingPopUp"
+          @goToPrevImg="prevImage"
         />
     </template>
     <template v-else>
@@ -177,6 +178,9 @@ export default {
       if (this.isImageClickable) {
         this.showingPopUp = !this.showingPopUp
       }
+    },
+    prevImage () {
+      console.log(this.comProduct.additionalImages.length--)
     }
   },
   created () {

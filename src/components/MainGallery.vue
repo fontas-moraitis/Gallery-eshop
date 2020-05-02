@@ -124,7 +124,7 @@ export default {
   .next {
     position: fixed;
     top: 50%;
-    right: 0;
+    right: 12px;
     width: 30px;
     height: 30px;
     z-index: 10;
@@ -134,7 +134,7 @@ export default {
   .previous {
     position: fixed;
     top: 50%;
-    left: 0;
+    left: 12px;
     width: 30px;
     height: 30px;
     z-index: 10;
