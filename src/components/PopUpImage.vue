@@ -81,7 +81,7 @@ export default {
         cursor: pointer;
       }
       &__image {
-        width: 48vw;
+        width: 600px;
       }
     }
     &__image-title {
