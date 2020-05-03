@@ -5,10 +5,10 @@
     >
       <img @click.prevent="goToPrevImg" src="@/assets/left--black.svg" alt="arrow pointing left" class="arrow-icon previous">
       <div class="image-wrapper">
-        <div @click.prevent="closePopUp" class="close-button-wrapper"><img src="@/assets/trash.svg" alt="close-button"></div>
-        <img :src="mainImage" :alt="imageTitle" class="image-wrapper__image">
+        <div @click.prevent="closePopUp" class="close-button-wrapper"><img src="@/assets/x.svg" alt="close-button"></div>
+        <img :src="currentImage" :alt="imageTitle" class="image-wrapper__image">
       </div>
-      <img src="@/assets/right--black.svg" alt="" class="arrow-icon next">
+      <img @click.prevent="goToNextImg" src="@/assets/right--black.svg" alt="" class="arrow-icon next">
     </div>
 </template>
 
@@ -23,6 +23,16 @@ export default {
     imageTitle: {
       type: String,
       required: false
+    },
+    allImages: {
+      type: Array,
+      required: false
+    }
+  },
+  data () {
+    return {
+      index: 2,
+      currentImage: null
     }
   },
   methods: {
@@ -30,9 +40,20 @@ export default {
       this.$emit('closePopUp')
     },
     goToPrevImg () {
-      console.log('left clicked')
-      this.$emit('goToPrevImg')
+      if (this.index > 0) {
+        this.currentImage = this.allImages[this.index].filename
+        this.index--
+      }
+    },
+    goToNextImg () {
+      if (this.index < this.allImages.length - 1) {
+        this.currentImage = this.allImages[this.index].filename
+        this.index++
+      }
     }
+  },
+  created () {
+    this.currentImage = this.mainImage
   }
 }
 </script>
@@ -60,7 +81,7 @@ export default {
         cursor: pointer;
       }
       &__image {
-        width: 40vw;
+        width: 48vw;
       }
     }
     &__image-title {
