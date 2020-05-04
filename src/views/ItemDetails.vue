@@ -166,7 +166,8 @@ export default {
         price: this.comProduct.prodPrice,
         dimensions: this.comProduct.prodDimensions,
         weight: this.comProduct.prodWeight,
-        quantity: this.quantity
+        quantity: this.quantity,
+        image: this.comProduct.additionalImages[0].filename
       })
     },
     handleQuantity (quantity) {

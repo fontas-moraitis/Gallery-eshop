@@ -162,7 +162,6 @@ export default {
           cursor: pointer;
         }
       }
-
       .bag-row-colored {
         background-color: #efeeee;
       }

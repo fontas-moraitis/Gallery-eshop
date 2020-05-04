@@ -16,7 +16,13 @@
    <img src="@/assets/left.svg" alt="arrow pointing left" @click="imageFlippingBwd" class="previous" />
    <img src="@/assets/right.svg" alt="arrow pointing right" @click="imageFlippingFwd" class="next" />
    <div class="image-indicator">
-     <div v-for="(circle, index) in cmsMainGallery.length" :key="index" class="circle" :class="[index == currentIndex ? 'circle--filled' : '']"></div>
+     <div
+      v-for="(circle, index) in cmsMainGallery.length"
+      :key="index" class="circle"
+      :class="[index == currentIndex ? 'circle--filled' : '']"
+      @click="dotNavigation(index)"
+    >
+    </div>
    </div>
   </div>
 </template>
@@ -65,15 +71,16 @@ export default {
     keyboardNavigation () {
       if (this.isKeyboardNav) {
         if (event.keyCode === 39) {
-          console.log('right')
           this.imageFlippingFwd()
         } else if (event.keyCode === 37) {
-          console.log('left')
           this.imageFlippingBwd()
         }
       } else {
         document.removeEventListener('keydown', event => this.keyboardNavigation())
       }
+    },
+    dotNavigation (index) {
+      this.currentIndex = index
     }
   }
 }
@@ -156,6 +163,7 @@ export default {
       border: 1px solid white;
       border-radius: 50%;
       margin: 0 $marg-xxxsmall;
+      cursor: pointer;
     }
     .circle--filled {
       background: $white;
