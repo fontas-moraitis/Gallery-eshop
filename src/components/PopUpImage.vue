@@ -17,7 +17,7 @@ export default {
   name: 'PopUpImage',
   props: {
     mainImage: {
-      type: String,
+      type: Object,
       required: true
     },
     imageTitle: {
@@ -31,7 +31,7 @@ export default {
   },
   data () {
     return {
-      index: 2,
+      index: null,
       currentImage: null
     }
   },
@@ -41,19 +41,20 @@ export default {
     },
     goToPrevImg () {
       if (this.index > 0) {
-        this.currentImage = this.allImages[this.index].filename
         this.index--
+        this.currentImage = this.allImages[this.index]
       }
     },
     goToNextImg () {
       if (this.index < this.allImages.length - 1) {
-        this.currentImage = this.allImages[this.index].filename
         this.index++
+        this.currentImage = this.allImages[this.index]
       }
     }
   },
   created () {
-    this.currentImage = this.mainImage
+    this.currentImage = this.mainImage.img
+    this.index = this.mainImage.index
   }
 }
 </script>
@@ -81,7 +82,7 @@ export default {
         cursor: pointer;
       }
       &__image {
-        width: 600px;
+        height: 85vh;
       }
     }
     &__image-title {

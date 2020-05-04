@@ -27,8 +27,8 @@
               <div>
                 <img
                   class="item-wrapper__img ghost--no-motion"
-                  :key="mainImage"
-                  :src="mainImage"
+                  :key="mainImage.index"
+                  :src="mainImage.img"
                   :alt="comProduct.prodTitle"
                   @click="handlePopUp"
                 >
@@ -61,7 +61,7 @@
           v-if="showingPopUp"
           :mainImage="mainImage"
           :imageTitle="comProduct.prodTitle"
-          :allImages="comProduct.additionalImages"
+          :allImages="allImages"
           v-on:closePopUp="showingPopUp = !showingPopUp"
         />
     </template>
@@ -97,7 +97,7 @@ export default {
         error: null
       },
       quantity: 1,
-      mainImage: String,
+      mainImage: Object,
       showingPopUp: false
     }
   },
@@ -119,6 +119,9 @@ export default {
         return true
       }
       return false
+    },
+    allImages () {
+      return this.comProduct.additionalImages.map(obj => obj.filename)
     }
   },
   methods: {
@@ -142,7 +145,7 @@ export default {
           const productData = response.data.story.content.body.find(product => product._uid === id)
           if (productData) {
             this.product.data = productData
-            this.mainImage = this.product.data.image
+            this.mainImage = { img: productData.additionalImages[0].filename, index: 0 }
             this.product.loading = false
           } else {
             this.$router.push({ name: 'notFound' })
@@ -160,7 +163,6 @@ export default {
       this.setCartData({
         id: this.comProduct._uid,
         title: this.comProduct.prodTitle,
-        image: this.comProduct.image,
         price: this.comProduct.prodPrice,
         dimensions: this.comProduct.prodDimensions,
         weight: this.comProduct.prodWeight,
@@ -171,7 +173,7 @@ export default {
       this.quantity = quantity
     },
     focusImage (index) {
-      this.mainImage = this.comProduct.additionalImages[index].filename
+      this.mainImage = { img: this.comProduct.additionalImages[index].filename, index: index }
     },
     handlePopUp () {
       if (this.isImageClickable) {

@@ -2,7 +2,7 @@
   <div class="single-product">
     <div>
       <div class="image-container">
-        <img :src="product.image" :alt="product.prodTitle">
+        <img :src="product.additionalImages[0].filename" :alt="product.prodTitle">
         <router-link :to="{ name: 'ItemDetails', params: { id: product._uid } }" :key="$route.path">
           <div class="image-footer">
             <p class="image-footer__title">{{ product.prodTitle }}</p>

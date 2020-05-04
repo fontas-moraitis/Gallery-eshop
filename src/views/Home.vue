@@ -46,7 +46,6 @@ export default {
     })
   },
   beforeRouteLeave (to, from, next) {
-    console.log('route change')
     this.isKeyboardNav = false
     next(true)
   },
