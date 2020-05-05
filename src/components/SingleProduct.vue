@@ -3,6 +3,7 @@
     <div>
       <div class="image-container">
         <img :src="product.additionalImages[0].filename" :alt="product.prodTitle">
+        <div v-if="showImageLoader" class="image-loader">loading...</div>
         <router-link :to="{ name: 'ItemDetails', params: { id: product._uid } }" :key="$route.path">
           <div class="image-footer">
             <p class="image-footer__title">{{ product.prodTitle }}</p>
@@ -19,6 +20,19 @@ export default {
   name: 'SingleProduct',
   props: {
     product: Object
+  },
+  data () {
+    return {
+      showImageLoader: true
+    }
+  },
+  mounted () {
+    setTimeout(this.turnImageLoaderOff, 800)
+  },
+  methods: {
+    turnImageLoaderOff () {
+      this.showImageLoader = false
+    }
   }
 }
 </script>
@@ -35,6 +49,19 @@ export default {
     img {
       width: 280px;
       cursor: pointer;
+    }
+    .image-loader {
+      width: 280px;
+      height: 280px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: $font-medium;
+      color:rgba(33, 33, 33, .7);
+      background-color: $white;
     }
     .image-footer {
       @include flex-center-column;

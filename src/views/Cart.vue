@@ -137,15 +137,15 @@ export default {
         min-height: 100px;
         display: grid;
         grid-template-rows: auto;
-        grid-template-columns: repeat(5, 1fr) .2fr;
+        grid-template-columns: repeat(2, 1fr) .5fr repeat(2, 1fr) .2fr;
         padding: $pad-xlarge;
         justify-items: center;
         align-items: center;
         border-bottom: 1px solid $beize;
         line-height: 1.5;
-        font-size: $font-xsmall;
+        font-size: $font-xxsmall;
         .item-info {
-          margin: 0 $marg-xsmall;
+          margin: 0 $marg-xxsmall;
         }
         .image-wrapper {
           img {
