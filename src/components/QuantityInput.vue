@@ -2,8 +2,9 @@
   <input
    min="1"
    max="10"
+   maxlength="2"
    class="quantity-input"
-   type="number"
+   type="text"
    :value="value"
    @input="$emit('input', Number($event.target.value))"
    >
@@ -34,8 +35,8 @@ export default {
 
 @media screen and (max-width: 768px) {
   .quantity-input {
-    height: 24px;
-    width: 24px;
+    height: 20px;
+    width: 20px;
   }
 }
 </style>

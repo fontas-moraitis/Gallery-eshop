@@ -21,13 +21,13 @@
         class="bag-row bag-row-colored"
       >
         <div class="image-wrapper"><img :src="product.image" :alt="product.title"></div>
-        <div><span class="item-info medium">{{product.title}}</span><span>{{product.dimensions}} cm </span><span>{{product.weight}} kg</span></div>
+        <div><span class="item-info medium numbers">{{product.title}}</span><span>{{product.dimensions}} cm </span><span>{{product.weight}} kg</span></div>
         <QuantityInput
           :value="product.quantity"
           @input="handleQuantity($event, product.id)"
          />
-        <div>{{product.price | currency}}</div>
-        <div class="medium">{{ priceByQuantity(product.quantity, product.price) | currency }}</div>
+        <div class="numbers">{{product.price | currency}}</div>
+        <div class="medium numbers">{{ priceByQuantity(product.quantity, product.price) | currency }}</div>
         <a @click.prevent="removeItemFromCart(product.id)">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z"/>
@@ -41,7 +41,7 @@
       </div>
       <div class="bag-row heavy">
         <p class="total-text">total: </p>
-        <p class="total-price">{{ totalPrice | currency }}</p>
+        <p class="total-price numbers">{{ totalPrice | currency }}</p>
       </div>
       <button class="button button--dark" @click="sendRequest">send your request</button>
       <ContactForm
@@ -182,11 +182,14 @@ export default {
         padding: $pad-small;
         border-bottom: 1px solid $beize;
         line-height: 1;
-        font-size: $font-xxsmall;
+        font-size: $font-xxxsmall;
         grid-template-columns: 1fr .5fr 1fr 1fr .4fr;
         .item-info {
           display: flex;
           flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin: 0;
         }
         .total-text {
           grid-column: 3 / span 1;

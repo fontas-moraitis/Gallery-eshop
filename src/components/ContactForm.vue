@@ -10,20 +10,23 @@
         :key="item.id"
         class="item"
       >
-        <img :src="item.image" :alt="item.title" /><span>{{ item.title }}</span><span>{{ item.quantity }}</span>
+        <img :src="item.image" :alt="item.title" /><span>{{ item.title }}</span><span class="number">{{ item.quantity }}</span>
       </label>
-      <label class="total medium">total: {{ totalPrice | currency }}</label>
+      <label class="total medium number">total: {{ totalPrice | currency }}</label>
       <label>
-        <input type="text" name="name" placeholder="Your name*">
-      </label>
-      <label>
-        <input type="email" name="_replyto" placeholder="Your email*">
+        <input type="text" name="name" placeholder="First name*" maxlength="30" required>
       </label>
       <label>
-        <input type="address" name="address" placeholder="Delivery address*">
+        <input type="text" name="name" placeholder="Last name*" maxlength="30" required>
       </label>
       <label>
-        <textarea name="message" placeholder="Leave a message for the artist*"></textarea>
+        <input type="email" name="_replyto" placeholder="Your email*" required>
+      </label>
+      <label>
+        <input type="address" name="address" placeholder="Delivery address*" required>
+      </label>
+      <label>
+        <textarea name="message" placeholder="Leave a message for the artist"></textarea>
       </label>
       <input type="submit" value="Send Request" class="input-button input-button--dark">
       <input type="button" value="Cancel Request" @click.prevent="cancelSubmition" class="input-button">
@@ -128,7 +131,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 768px) {
   .form-wrapper {
     .page-header {
       margin-bottom: $marg-xxlarge;
@@ -141,15 +144,20 @@ export default {
       input {
         width: auto;
       }
+      textarea {
+        width: 92%;
+        min-height: 100px;
+        border: 1px solid $highlight;
+      }
     }
-  }
-  .item {
-    display: flex;
-    width: 50vw;
-    justify-content: space-between;
-    align-items: center;
-    img {
-      width: 30px;
+    .item {
+      display: flex;
+      width: 50vw;
+      justify-content: space-between;
+      align-items: center;
+      img {
+        width: 30px;
+      }
     }
   }
 }
