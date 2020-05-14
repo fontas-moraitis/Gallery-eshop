@@ -6,7 +6,7 @@
         <a href="https://www.instagram.com/stavrosperakis/" target="blank" class="insta-link">instagram</a>
       </div>
       <p class="medium">terms & conditions</p>
-      <router-link class="router-link" :to="{ name: 'Terms'}">All sales are final. Click here to read through all the terms and conditions.</router-link>
+      <router-link class="router-link" :to="{ name: 'Terms'}">terms and conditions</router-link>
       <div class="copyright">stavros perakis copyright © 2020 | created by <a class="medium" href="http://www.fontas.me/" target="blank">fontas</a></div>
     </div>
   </div>

@@ -106,7 +106,7 @@ export default {
       opacity: 0;
       transition: all 2000ms ease;
       animation: sliding 25s linear infinite;
-      filter: brightness(.80);
+      filter: brightness(.60);
     }
   }
   &__hero-text {

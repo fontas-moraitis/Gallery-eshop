@@ -4,7 +4,7 @@
       <div>
         <div class="image-container">
           <img :src="product.additionalImages[0].filename" :alt="product.prodTitle">
-          <div v-if="showImageLoader" class="image-loader">loading...</div>
+          <div v-if="showImageLoader" class="image-loader"></div>
             <div class="image-footer">
               <p class="image-footer__title">{{ product.prodTitle }}</p>
               <p class="image-footer__price medium">{{ product.prodPrice | currency }}</p>
@@ -27,7 +27,7 @@ export default {
     }
   },
   mounted () {
-    setTimeout(this.turnImageLoaderOff, 800)
+    setTimeout(this.turnImageLoaderOff, 1800)
   },
   methods: {
     turnImageLoaderOff () {
@@ -62,7 +62,7 @@ export default {
         font-weight: $font-medium;
         color:rgba(33, 33, 33, .7);
         background-color: $beize;
-        border: 1px solid $highlight;
+        animation: pulse 1.8s ease-in-out;
       }
       .image-footer {
         @include flex-center-column;
@@ -74,9 +74,10 @@ export default {
         backdrop-filter: blur(5px);
         opacity: 0;
         cursor: pointer;
+        transition: all .5s ease-in-out;
         &:hover {
           opacity: 1;
-          box-shadow: -4px -4px 12px 0 rgba(255, 255, 255, 0.9), 4px 4px 12px 0 rgba(217, 210, 200, 0.9)
+          transition: all .8s ease-in-out;
         }
         &__title {
           @include title;

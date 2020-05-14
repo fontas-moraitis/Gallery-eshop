@@ -37,9 +37,9 @@
                 <p class="item-title">{{comProduct.prodTitle}}</p>
                 <p class="item-desc">{{comProduct.prodDescription}}</p>
                 <p class="item-info-title medium">DETAILS:</p>
-                <p class="item-info numbers">dimensions: {{comProduct.prodDimensions}} cm</p>
-                <p class="item-info numbers">weight: {{comProduct.prodWeight}} kg</p>
-                <p class="item-price medium number">{{comProduct.prodPrice | currency}} | <span class="price-info">(price per item)</span></p>
+                <p class="item-info">dimensions: {{comProduct.prodDimensions}} cm</p>
+                <p class="item-info">weight: {{comProduct.prodWeight}} kg</p>
+                <p class="item-price medium numbers">{{comProduct.prodPrice | currency}} <span class="price-info">(price per item)</span></p>
                 <div class="item-buttons">
                     <QuantityInput
                       :value="1"
@@ -199,26 +199,32 @@ export default {
       margin-right: $marg-xlarge;
       cursor: pointer;
     }
+    .additional-images-wrapper::-webkit-scrollbar { width: 0 !important }
     .additional-images-wrapper {
       display: flex;
       flex-direction: column;
       height: 480px;
-      width: 480px;
-      overflow-y: scroll;
+      min-width: 140px;
+      overflow-Y: scroll;
+      overflow-X: hidden;
       justify-content: space-between;
       margin: $marg-small;
       flex-shrink: 1; /* default 1 */
+      overflow: -moz-scrollbars-none;
+      -ms-overflow-style: none;
       .additional-images {
         img {
           width: 140px;
           cursor: pointer;
-          margin: $marg-xxxsmall 0;
+          margin-bottom: $marg-xxxsmall;
         }
       }
     }
     &__text {
       display: flex;
       flex-direction: column;
+      max-height: 480px;
+      min-width: 320px;
       .item-title {
         font-size: $font-large;
         margin-bottom: $marg-small;
@@ -227,7 +233,7 @@ export default {
         font-weight: $font-normal;
         margin: $marg-xlarge 0 $marg-xxlarge 0;
         .price-info {
-          font-size: $font-xxsmall;
+          font-size: $font-xxxsmall;
         }
       }
       .item-info-title {
@@ -237,7 +243,9 @@ export default {
       .item-info {
         margin-bottom: $marg-xxsmall;
         font-size: $font-xsmall;
-        letter-spacing: 1.1px;
+        font-weight: $font-regular;
+        letter-spacing: 1px;
+        line-height: 1.5;
       }
       .item-desc {
         font-weight: $font-regular;

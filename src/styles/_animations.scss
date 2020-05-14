@@ -73,3 +73,12 @@
     transform: translateX(0);
   }
 }
+
+@keyframes pulse {
+  0% {
+    background-color: $beize;
+  }
+  100% {
+    background-color: $highlight;
+  }
+}

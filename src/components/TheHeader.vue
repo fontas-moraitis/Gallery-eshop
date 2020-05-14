@@ -60,7 +60,10 @@ export default {
         align-items: center;
         .router-link {
           display: flex;
-          @include title-standard;
+          font-size: $font-small;
+          font-weight: $font-thin;
+          text-decoration: none;
+          letter-spacing: 1.5px;
           margin-left: $marg-large;
           color: inherit;
         }
