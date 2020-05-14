@@ -2,8 +2,8 @@
   <input
    min="1"
    max="10"
-   maxlength="2"
-   class="quantity-input"
+   maxlength="1"
+   class="quantity-input numbers"
    type="text"
    :value="value"
    @input="$emit('input', Number($event.target.value))"

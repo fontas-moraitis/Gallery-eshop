@@ -5,67 +5,48 @@
         <div class="spin"></div>
       </div>
     </template>
-    <template v-else-if="cmsAboutData">
+    <template v-else-if="workshopData">
       <div class="wrapper">
         <div class="container container--column">
-          <p class="page-header">about the artist</p>
+          <p class="page-header">workshop with the artist</p>
           <div class="intro-wrapper">
-            <div class="intro-wrapper__artist">
-              <img :src="cmsAboutData[0].image_stavros" :alt="cmsAboutData[0].title" class="ghost--left">
+            <div class="intro-wrapper__workshops">
+              <img :src="workshopData[0].image" :alt="workshopData[0].title" class="ghost--left">
               <div class="text-wrapper ghost--right">
-                <p class="title">{{cmsAboutData[0].title}}</p>
-                <p class="text">{{cmsAboutData[0].bio}}</p>
+                <p class="title">{{workshopData[0].title}}</p>
+                <p class="text">{{workshopData[0].description}}</p>
               </div>
-            </div>
-            <div class="intro-wrapper__studio">
-              <div class="text-wrapper ghost--left">
-                <p class="title">{{cmsAboutData[0].studio}}</p>
-                <p class="text">{{cmsAboutData[0].aboutStudio}}</p>
-              </div>
-              <img :src="cmsAboutData[0].image_studio" :alt="cmsAboutData[0].title" class="ghost--right">
             </div>
           </div>
           <TheFooter />
         </div>
       </div>
     </template>
-    <template v-else>
-      <router-link :to="{ name: 'Home' }">
-        <div class="error-wrapper">
-          <img src="@/assets/broken-pot.jpg" alt="broken pot">
-          <button class="error-text button button--light">something went wrong, click here to go home</button>
-        </div>
-      </router-link>
-    </template>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
-
 import TheFooter from '@/components/TheFooter.vue'
 
 export default {
   components: {
     TheFooter
   },
-  data () {
-    return {}
-  },
   computed: {
     ...mapState({
-      cmsAboutData: state => state.aboutData.data,
-      loading: state => state.aboutData.loading,
-      error: state => state.aboutData.error
+      workshopData: state => state.workshopData.data,
+      loading: state => state.workshopData.loading,
+      error: state => state.workshopData.error
     })
   },
   methods: {
     ...mapActions([
-      'loadAboutData'
+      'loadWorkshopData'
     ])
   },
   created () {
-    this.loadAboutData()
+    this.loadWorkshopData()
   }
 }
 </script>
@@ -75,7 +56,7 @@ export default {
     max-width: 920px;
     margin: 5% 0;
     padding: 0 $pad-medium;
-    &__artist {
+    &__workshops {
       display: flex;
       align-items: center;
       height: 420px;
@@ -88,16 +69,6 @@ export default {
       .text-wrapper {
         display: flex;
         flex-direction: column;
-      }
-    }
-    &__studio {
-      display: flex;
-      align-items: center;
-      height: 420px;
-      img {
-        height: 100%;
-        width: auto;
-        margin-left: 12%;
       }
     }
   }
@@ -128,7 +99,7 @@ export default {
       max-width: 920px;
       margin: 0;
       padding: 0;
-      &__artist {
+      &__workshops {
         @include flex-center-column;
         height: 100%;
         margin-bottom: 0;
@@ -145,22 +116,6 @@ export default {
           flex-direction: column;
           margin: $marg-xlarge 0;
           padding: 0 $pad-medium;
-        }
-      }
-      &__studio {
-        @include flex-center-column;
-        height: 100%;
-        .text-wrapper {
-          order: 2;
-          margin: $marg-xlarge 0;
-          padding: 0 $pad-medium;
-        }
-        img {
-          height: 100%;
-          width: 100%;
-          margin-left: 0;
-          order: 1;
-          margin: $marg-large 0;
         }
       }
     }

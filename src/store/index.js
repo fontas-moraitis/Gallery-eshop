@@ -21,6 +21,11 @@ export default new Vuex.Store({
       data: null,
       error: null
     },
+    workshopData: {
+      loading: false,
+      data: null,
+      error: null
+    },
     cart: []
   },
   getters: {
@@ -66,6 +71,17 @@ export default new Vuex.Store({
     aboutDataFailed: (state) => {
       state.aboutData.loading = false
       state.aboutData.error = true
+    },
+    beforeLoadWorkshopData: (state) => {
+      state.workshopData.loading = true
+    },
+    setWorkshopData: (state, payload) => {
+      state.workshopData.loading = false
+      state.workshopData.data = payload
+    },
+    workshopDataFailed: (state) => {
+      state.workshopData.loading = false
+      state.workshopData.error = true
     },
     setCartData: (state, payload) => {
       const currProduct = state.cart.find(prod => prod.id === payload.id)
@@ -142,6 +158,26 @@ export default new Vuex.Store({
           commit('setAboutData', aboutData)
         }).catch(error => {
           commit('aboutDataFailed', error)
+        })
+    },
+    loadWorkshopData ({ commit }) {
+      commit('beforeLoadWorkshopData')
+      const StoryblokClient = require('storyblok-js-client')
+      const Storyblok = new StoryblokClient({
+        accessToken: 'wANpEQEsMYGOwLxwXQ76Ggtt',
+        cache: {
+          clear: 'auto',
+          type: 'memory'
+        }
+      })
+      Storyblok.get('cdn/stories/workshops', {
+        token: 'V0xwB0q7VQvBe1IPBmmDyQtt'
+      })
+        .then(response => {
+          const workshopData = response.data.story.content.body
+          commit('setWorkshopData', workshopData)
+        }).catch(error => {
+          commit('workshopDataFailed', error)
         })
     }
   }

@@ -40,21 +40,30 @@ export default {
       this.$emit('closePopUp')
     },
     goToPrevImg () {
-      if (this.index > 0) {
+      if (this.index >= 0) {
         this.index--
-        this.currentImage = this.allImages[this.index]
+      }
+      if (this.index < 0) {
+        this.index = this.allImages.length - 1
       }
     },
     goToNextImg () {
-      if (this.index < this.allImages.length - 1) {
+      if (this.index <= this.allImages.length - 1) {
         this.index++
-        this.currentImage = this.allImages[this.index]
+      }
+      if (this.index > this.allImages.length - 1) {
+        this.index = 0
       }
     }
   },
   created () {
     this.currentImage = this.mainImage.img
     this.index = this.mainImage.index
+  },
+  watch: {
+    index: function (index) {
+      this.currentImage = this.allImages[this.index]
+    }
   }
 }
 </script>

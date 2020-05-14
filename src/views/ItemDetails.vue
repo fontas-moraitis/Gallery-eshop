@@ -37,9 +37,9 @@
                 <p class="item-title">{{comProduct.prodTitle}}</p>
                 <p class="item-desc">{{comProduct.prodDescription}}</p>
                 <p class="item-info-title medium">DETAILS:</p>
-                <p class="item-info">dimensions: {{comProduct.prodDimensions}} cm</p>
-                <p class="item-info">weight: {{comProduct.prodWeight}} kg</p>
-                <p class="item-price medium">{{comProduct.prodPrice | currency}} | <span class="price-info">(price per item)</span></p>
+                <p class="item-info numbers">dimensions: {{comProduct.prodDimensions}} cm</p>
+                <p class="item-info numbers">weight: {{comProduct.prodWeight}} kg</p>
+                <p class="item-price medium number">{{comProduct.prodPrice | currency}} | <span class="price-info">(price per item)</span></p>
                 <div class="item-buttons">
                     <QuantityInput
                       :value="1"
@@ -203,13 +203,16 @@ export default {
       display: flex;
       flex-direction: column;
       height: 480px;
+      width: 480px;
+      overflow-y: scroll;
       justify-content: space-between;
-      margin: $marg-medium;
+      margin: $marg-small;
       flex-shrink: 1; /* default 1 */
       .additional-images {
         img {
           width: 140px;
           cursor: pointer;
+          margin: $marg-xxxsmall 0;
         }
       }
     }

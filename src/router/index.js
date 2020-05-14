@@ -10,6 +10,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "Home" */ '../views/Home')
   },
   {
+    path: '/workshops',
+    name: 'Workshops',
+    component: () => import(/* webpackChunkName: "Workshops" */ '../views/Workshops')
+  },
+  {
     path: '/about',
     name: 'About',
     component: () => import(/* webpackChunkName: "About" */ '../views/About')
@@ -30,6 +35,11 @@ const routes = [
     name: 'Cart',
     component: () => import(/* webpackChunkName: "Cart" */ '../views/Cart')
 
+  },
+  {
+    path: '/terms',
+    name: 'Terms',
+    component: () => import(/* webpackChunkName: "Terms" */ '../views/Terms')
   },
   {
     path: '/404',

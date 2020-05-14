@@ -76,7 +76,6 @@ $font-thick: 700;
 }
 
 @mixin title-special {
-  // font-family: 'Libre Baskerville', serif;
   font-size: 48px;
   font-weight: $font-thin;
   letter-spacing: 1px;
@@ -84,7 +83,6 @@ $font-thick: 700;
 }
 
 @mixin subtitle-special {
-  // font-family: 'Libre Baskerville', serif;
   font-size: $font-medium;
   font-weight: $font-thin;
   text-align: center; 

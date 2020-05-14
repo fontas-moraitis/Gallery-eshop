@@ -6,7 +6,7 @@
         <a href="https://www.instagram.com/stavrosperakis/" target="blank" class="insta-link">instagram</a>
       </div>
       <p class="medium">terms & conditions</p>
-      <p>All sales are final. Should your order arrive damaged, please notify me within 3 days of delivery to arrange for a replacement.</p>
+      <router-link class="router-link" :to="{ name: 'Terms'}">All sales are final. Click here to read through all the terms and conditions.</router-link>
       <div class="copyright">stavros perakis copyright © 2020 | created by <a class="medium" href="http://www.fontas.me/" target="blank">fontas</a></div>
     </div>
   </div>
@@ -34,7 +34,7 @@
       font-size: $font-xxsmall;
       .social-container {
         @include flex-center-column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         .insta-link {
           text-decoration: none;
           color: $black;
@@ -51,14 +51,14 @@
       letter-spacing: 1px;
       display: flex;
       a {
-       margin: 0 6px;
+       margin: 0 $marg-xsmall;
        color: $black;
       }
     }
   }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 768px) {
   .app-footer {
     margin-top: $marg-xxlarge;
     &__container {

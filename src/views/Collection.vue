@@ -116,7 +116,7 @@ export default {
       }
     }
     &__expo {
-      max-width: 1320px;
+      max-width: 1200px;
       display: flex;
       flex-flow: row wrap;
       justify-content: center;

@@ -3,6 +3,7 @@
           <router-link :to="{ name: 'Home' }" class="app-header__logo">stavros perakis</router-link>
           <div class="app-header__links">
             <router-link class="router-link" :to="{ name: 'Collection' }">shop</router-link>
+            <router-link class="router-link" :to="{ name: 'Workshops'}">workshops</router-link>
             <router-link class="router-link" :to="{ name: 'About'}">about</router-link>
             <router-link class="router-link" :to="{ name: 'Cart'}">
               cart

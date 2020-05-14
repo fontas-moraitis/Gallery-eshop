@@ -47,7 +47,7 @@ export default {
       margin: 0 $marg-large;
       position: relative;
       img {
-        width: 280px;
+        width: 320px;
         cursor: pointer;
       }
       .image-loader {
@@ -76,7 +76,7 @@ export default {
         cursor: pointer;
         &:hover {
           opacity: 1;
-          border: 1px solid $white;
+          box-shadow: -4px -4px 12px 0 rgba(255, 255, 255, 0.9), 4px 4px 12px 0 rgba(217, 210, 200, 0.9)
         }
         &__title {
           @include title;

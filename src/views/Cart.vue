@@ -21,7 +21,7 @@
         class="bag-row bag-row-colored"
       >
         <div class="image-wrapper"><img :src="product.image" :alt="product.title"></div>
-        <div><span class="item-info medium numbers">{{product.title}}</span><span>{{product.dimensions}} cm </span><span>{{product.weight}} kg</span></div>
+        <div><span class="item-info medium">{{product.title}}</span><span class="numbers">{{product.dimensions}} cm </span><span class="numbers">{{product.weight}} kg</span></div>
         <QuantityInput
           :value="product.quantity"
           @input="handleQuantity($event, product.id)"
