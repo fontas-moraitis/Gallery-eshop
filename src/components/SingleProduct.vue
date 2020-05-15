@@ -27,7 +27,7 @@ export default {
     }
   },
   mounted () {
-    setTimeout(this.turnImageLoaderOff, 1800)
+    setTimeout(this.turnImageLoaderOff, 1000)
   },
   methods: {
     turnImageLoaderOff () {
@@ -59,10 +59,10 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-weight: $font-medium;
-        color:rgba(33, 33, 33, .7);
-        background-color: $beize;
-        animation: pulse 1.8s ease-in-out;
+        background: #f6f7f8;
+        background: linear-gradient(to right, #eeeeee 8%, #dcdcdc 18%, #eeeeee 33%);
+        background-size: 800px 104px;
+        animation: pulse 1s linear infinite;
       }
       .image-footer {
         @include flex-center-column;

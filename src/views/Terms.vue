@@ -25,6 +25,7 @@
     @include flex-center;
     width: 100vw;
     height: 100vh;
+    background-color: $beize;
     .terms-wrapper {
       display: flex;
       flex-direction: column;

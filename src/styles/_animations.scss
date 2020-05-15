@@ -75,10 +75,10 @@
 }
 
 @keyframes pulse {
-  0% {
-    background-color: $beize;
+  0%{
+    background-position: -468px 0
   }
-  100% {
-    background-color: $highlight;
+  100%{
+      background-position: 468px 0
   }
 }

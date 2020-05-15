@@ -26,6 +26,7 @@
               </div>
               <div>
                 <img
+                  title="click to enlarge image"
                   class="item-wrapper__img ghost--no-motion"
                   :key="mainImage.index"
                   :src="mainImage.img"
@@ -191,7 +192,7 @@ export default {
 <style scoped lang="scss">
   .item-wrapper {
     @include flex-center;
-    width: 100vw;
+    max-width: 1400px;
     height: 80vh;
     padding: 0 16%;
     &__img {
@@ -241,7 +242,6 @@ export default {
         font-size: $font-xsmall;
       }
       .item-info {
-        margin-bottom: $marg-xxsmall;
         font-size: $font-xsmall;
         font-weight: $font-regular;
         letter-spacing: 1px;
@@ -305,7 +305,7 @@ export default {
         }
         .item-price {
           font-weight: $font-normal;
-          margin: $marg-large 0 $marg-xxlarge 0;
+          margin: $marg-xlarge 0 $marg-xxlarge 0;
           .price-info {
             font-size: $font-xxsmall;
           }
@@ -315,7 +315,6 @@ export default {
           font-size: $font-xsmall;
         }
         .item-info {
-          margin-bottom: $marg-xxsmall;
           font-size: $font-xsmall;
           letter-spacing: 1.1px;
         }

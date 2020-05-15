@@ -15,6 +15,7 @@
                 v-for="(category, index) in filterOptions"
                 :key="index"
                 @click.prevent="activeCategory = category.value"
+                :class="{active: activeCategory === category.value}"
                 class="categories-wrapper__category"
               >
               {{category.text}}
@@ -109,6 +110,7 @@ export default {
       display: flex;
       &__category {
         margin: 0 $marg-medium;
+        padding-bottom: 2px;
         cursor: pointer;
         &:hover {
           color: salmon;
@@ -121,5 +123,9 @@ export default {
       flex-flow: row wrap;
       justify-content: center;
     }
+  }
+
+  .active {
+    border-bottom: 2px solid $black;
   }
 </style>
