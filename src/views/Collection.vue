@@ -128,4 +128,10 @@ export default {
   .active {
     border-bottom: 2px solid $black;
   }
+
+  @media screen and (max-width: 768px) {
+    .categories-wrapper {
+      margin-top: $marg-large;
+    }
+  }
 </style>

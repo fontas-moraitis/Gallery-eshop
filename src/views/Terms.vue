@@ -36,9 +36,7 @@
         margin-bottom: $marg-xxlarge;
       }
       .text {
-        font-size: $font-xsmall;
-        letter-spacing: 1.1px;
-        margin-bottom: $marg-xlarge;
+        text-align: start;
       }
     }
   }

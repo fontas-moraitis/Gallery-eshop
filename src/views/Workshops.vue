@@ -81,13 +81,6 @@ export default {
       color: rgb(48, 48, 53);
       margin-bottom: $marg-xlarge
     }
-    .text {
-      font-size: 14px;
-      line-height: 1.6;
-      letter-spacing: 1.1px;
-      text-align: center;
-      color: dimgrey;
-    }
   }
 
   @media screen and (max-width: 768px) {

@@ -18,6 +18,9 @@
               </div>
             </router-link>
           </div>
+          <div class="app-header__burger-wrapper">
+           <div class="burger-icon"></div>
+          </div>
       </div>
 </template>
 
@@ -68,6 +71,9 @@ export default {
           color: inherit;
         }
       }
+    &__burger-wrapper {
+      display: none;
+    }
   }
 
   .cart-icon {
@@ -97,23 +103,47 @@ export default {
       text-align: center;
     }
   }
-
   .cart-icon-group {
     fill: $white;
   }
 
-  @media screen and (max-width: 720px) {
-    .app-header {
-      padding: $pad-large;
-      &__logo {
-        font-size: $font-xxsmall;
-        letter-spacing: 1.2px;
-      }
-      &__links {
-        .router-link {
-          font-size: $font-xsmall;
-          margin-left: $marg-xxsmall;
+@media screen and (max-width: 768px) {
+  .app-header {
+    padding: $pad-large;
+    &__logo {
+      font-size: $font-xxsmall;
+      letter-spacing: 1.2px;
+    }
+    &__links {
+      display: none;
+    }
+
+    &__burger-wrapper {
+      display: block;
+      .burger-icon {
+        width: 24px;
+        height: 2px;
+        background: $beize;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          top: -6px;
+          left: 0;
+          width: 24px;
+          height: 2px;
+          background: $beize;
         }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 6px;
+          left: 0;
+          width: 24px;
+          height: 2px;
+          background: $beize;
+        }
+      }
     }
   }
 }

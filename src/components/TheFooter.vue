@@ -56,7 +56,7 @@
       letter-spacing: 1px;
       display: flex;
       .terms-link {
-        color: dodgerblue;
+        color: $black;
         text-decoration: underline;
       }
       a {
@@ -70,9 +70,9 @@
 @media screen and (max-width: 768px) {
   .app-footer {
     margin-top: $marg-xxlarge;
-    padding: 0;
-    height: 100px;
-    bottom: -100px;
+    padding: $pad-xsmall 0;
+    height: 120px;
+    bottom: -120px;
     &__container {
       @include flex-center-column;
       font-size: $font-xxxsmall;
@@ -91,13 +91,12 @@
         letter-spacing: .8px;
         display: flex;
         flex-direction: column;
+        margin-bottom: $marg-xsmall;
         .terms-link {
-          color: dodgerblue;
-          text-decoration: underline;
-          margin: $marg-xxsmall 0;
+          margin-bottom: $marg-xsmall;
         }
         a {
-        margin: 0;
+        margin: $marg-xsmall 0;
         color: $black;
         }
      }
