@@ -29,7 +29,7 @@ export default {
     text-align: center;
     background-color: $beize;
     &:focus {
-      outline: none;
+      outline: 2px solid $highlight;
     }
   }
 

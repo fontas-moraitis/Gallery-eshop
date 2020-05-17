@@ -111,7 +111,7 @@ export default {
       }
       .image-footer {
         position: relative;
-        width: 60%;
+        width: 96%;
         height: 100%;
         display: flex;
         flex-direction: row;

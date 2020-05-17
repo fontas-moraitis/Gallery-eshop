@@ -33,7 +33,8 @@
     padding: $pad-xlarge 0;
     font-size: $font-xxsmall;
     font-weight: $font-normal;
-    border-top: 2px solid white;
+    border-top: 1px solid white;
+    box-shadow: inset 0 4px 6px rgba(230, 230, 230, .5);
     &__container {
       max-width: 1200px;
       height: 100%;

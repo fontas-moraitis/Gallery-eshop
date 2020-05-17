@@ -220,6 +220,11 @@ export default {
           margin-bottom: $marg-xxxsmall;
         }
       }
+      .additional-images:last-child {
+        img {
+          margin-bottom: 0;
+        }
+      }
     }
     &__text {
       display: flex;

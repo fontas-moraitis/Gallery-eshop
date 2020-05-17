@@ -35,14 +35,15 @@
   position: relative;
   min-width: 100px;
   height: 40px;
-  border: 1px solid $highlight;
+  border: 1px solid $beize;
+  border-radius: 2px;
   letter-spacing: 1.1px;
   padding: 0 $pad-large;
   cursor: pointer;
 }
 
 .button:active {
-  transform: translateY(5px);
+  transform: scale(.9);
 }
 
 .button--light {
@@ -50,13 +51,8 @@
 }
 
 .button--dark {
-  background-color: $black;
+  background: $black;
   color: $white;
-}
-
-.button:hover {
-color: $white;
-background-color: $black;
 }
 
 .text {
@@ -117,11 +113,11 @@ background-color: $black;
   }
 }
 
-.dark-theme-burger, ::before, ::after {
+.dark-theme-burger {
   background-color: $black !important;
 }
 
-.light-theme-burger, ::before, ::after {
+.light-theme-burger {
   background-color: $white;
 }
 
