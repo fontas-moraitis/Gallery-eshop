@@ -117,6 +117,14 @@ background-color: $black;
   }
 }
 
+.dark-theme-burger, ::before, ::after {
+  background-color: $black !important;
+}
+
+.light-theme-burger, ::before, ::after {
+  background-color: $white;
+}
+
 .shake {
   animation: shake 1000ms ease-in-out forwards;
 }

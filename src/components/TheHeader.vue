@@ -1,12 +1,11 @@
 <template>
         <div class="app-header" :class="[currentPage === 'Home' ? 'light-theme' : 'dark-theme']">
-          <router-link :to="{ name: 'Home' }" class="app-header__logo">stavros perakis</router-link>
+          <router-link v-show="!showDropdownMenu" :to="{ name: 'Home' }" class="app-header__logo">stavros perakis</router-link>
           <div class="app-header__links">
             <router-link class="router-link" :to="{ name: 'Collection' }">shop</router-link>
             <router-link class="router-link" :to="{ name: 'Workshops'}">workshops</router-link>
             <router-link class="router-link" :to="{ name: 'About'}">about</router-link>
-            <router-link class="router-link" :to="{ name: 'Cart'}">
-              cart
+            <router-link class="router-link" :to="{ name: 'Cart'}">cart
               <div :key="totalCart" class="cart-icon shake" >
                 <div class="cart-svg">
                   <svg viewBox="0 -13 456.75885 456" xmlns="http://www.w3.org/2000/svg"><g :class="[currentPage === 'Home' ? 'cart-icon-group' : '']">
@@ -18,8 +17,18 @@
               </div>
             </router-link>
           </div>
-          <div class="app-header__burger-wrapper">
-           <div class="burger-icon"></div>
+          <div
+            @click="showDropdownMenu = !showDropdownMenu"
+            class="app-header__burger-wrapper"
+          >
+           <div :class="[showDropdownMenu ? 'burger-icon-open' : '']" class="burger-icon"></div>
+           <div v-if="showDropdownMenu" class="burger-menu">
+            <router-link class="router-link" :to="{ name: 'Home' }">home</router-link>
+            <router-link class="router-link" :to="{ name: 'Collection' }">shop</router-link>
+            <router-link class="router-link" :to="{ name: 'Workshops'}">workshops</router-link>
+            <router-link class="router-link" :to="{ name: 'About'}">about</router-link>
+            <router-link class="router-link" :to="{ name: 'Cart'}">cart</router-link>
+           </div>
           </div>
       </div>
 </template>
@@ -29,6 +38,11 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'TheHeader',
+  data () {
+    return {
+      showDropdownMenu: false
+    }
+  },
   computed: {
     ...mapGetters([
       'totalCart'
@@ -120,28 +134,52 @@ export default {
 
     &__burger-wrapper {
       display: block;
+      position: fixed;
+      top: 26px;
+      right: 22px;
       .burger-icon {
         width: 24px;
-        height: 2px;
-        background: $beize;
+        height: 3px;
         position: relative;
-        &::before {
+        border-radius: 2px;
+        &::before, &::after {
           content: '';
           position: absolute;
-          top: -6px;
-          left: 0;
           width: 24px;
-          height: 2px;
-          background: $beize;
+          height: 3px;
+          border-radius: 2px;
+        }
+        &::before {
+          top: -8px;
         }
         &::after {
-          content: '';
-          position: absolute;
-          top: 6px;
-          left: 0;
-          width: 24px;
-          height: 2px;
-          background: $beize;
+          top: 8px;
+        }
+      }
+      .burger-icon-open {
+        &::before {
+          transform: rotate(45deg) translateY(11px);
+        }
+        &::after {
+          transform: rotate(-45deg) translateY(-11px);
+        }
+
+      }
+      .burger-menu {
+        @include flex-center-column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: $white;
+        padding: $pad-medium;
+        animation: ghost 800ms ease-in-out;
+        z-index: -1;
+        .router-link {
+          font-size: $font-large;
+          font-weight: $font-thin;
+          margin: $marg-large 0;
         }
       }
     }
