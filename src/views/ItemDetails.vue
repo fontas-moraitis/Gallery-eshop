@@ -58,13 +58,15 @@
             <TheFooter />
           </div>
         </div>
-        <PopUpImage
-          v-if="showingPopUp"
-          :mainImage="mainImage"
-          :imageTitle="comProduct.prodTitle"
-          :allImages="allImages"
-          v-on:closePopUp="showingPopUp = !showingPopUp"
-        />
+        <transition name="fade">
+          <PopUpImage
+            v-if="showingPopUp"
+            :mainImage="mainImage"
+            :imageTitle="comProduct.prodTitle"
+            :allImages="allImages"
+            v-on:closePopUp="showingPopUp = !showingPopUp"
+          />
+        </transition>
     </template>
     <template v-else>
       <router-link :to="{ name: 'Home' }">

@@ -6,7 +6,7 @@
       <img @click.prevent="goToPrevImg" src="@/assets/left--black.svg" alt="arrow pointing left" class="arrow-icon previous">
       <div class="image-wrapper">
         <div @click.prevent="closePopUp" class="close-button-wrapper"><img src="@/assets/x.svg" alt="close-button"></div>
-        <img :src="currentImage" :alt="imageTitle" class="image-wrapper__image">
+          <img :src="currentImage" :alt="imageTitle" class="image-wrapper__image">
       </div>
       <img @click.prevent="goToNextImg" src="@/assets/right--black.svg" alt="" class="arrow-icon next">
     </div>
