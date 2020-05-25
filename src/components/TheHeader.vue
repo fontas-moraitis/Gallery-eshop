@@ -187,15 +187,15 @@ export default {
     }
       .burger-icon-open {
         background-color: $black;
-        transition: all 500ms ease-in-out;
+        transition: all 600ms ease-in-out;
       }
       .burger-icon-open.burger-top {
         transform: rotate(46deg) translateY(6px);
-        transition: all 500ms ease-in-out;
+        transition: all 600ms ease-in-out;
       }
       .burger-icon-open.burger-bottom {
         transform: rotate(-46deg) translateY(-6px);
-        transition: all 500ms ease-in-out;
+        transition: all 600ms ease-in-out;
       }
       .burger-menu {
         @include flex-center-column;

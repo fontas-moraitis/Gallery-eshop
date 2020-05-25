@@ -43,7 +43,7 @@
         <p class="total-text">total: </p>
         <p class="total-price numbers">{{ totalPrice | currency }}</p>
       </div>
-      <button class="button button--dark" @click="sendRequest">send your request</button>
+      <button class="button button--dark outside-click-exclude" @click="sendRequest">send your request</button>
       <ContactForm
        v-if="showContactForm"
        :totalPrice="totalPrice"

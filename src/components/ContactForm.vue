@@ -2,6 +2,8 @@
   <div class="form-wrapper">
     <h1 class="page-header mb-xlarge">send request to artist</h1>
     <form
+      id="contactForm"
+      v-outside-click="{exclude: ['outside-click-exclude'], handler: cancelSubmition}"
       action="https://formspree.io/FORM_ID"
       method="POST"
     >
