@@ -27,7 +27,7 @@ export default {
     }
   },
   mounted () {
-    setTimeout(this.turnImageLoaderOff, 1000)
+    setTimeout(this.turnImageLoaderOff, 1500)
   },
   methods: {
     turnImageLoaderOff () {

@@ -117,7 +117,7 @@ export default {
     transform: translate(-50%, -50%);
     z-index: 4;
     max-width: 520px;
-    animation: ghost--no-motion 4000ms ease-in-out;
+    animation: ghost--no-motion 2000ms ease-in-out;
   }
   .title {
     @include title-special;

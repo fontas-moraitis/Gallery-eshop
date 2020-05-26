@@ -86,7 +86,7 @@ export default {
       @include flex-between;
       z-index: 2 !important;
       padding: $pad-xxlarge;
-      animation: ghost 3000ms ease-in-out;
+      animation: ghost 1500ms ease-in-out;
       &__logo {
         @include title-standard;
         color: inherit;
