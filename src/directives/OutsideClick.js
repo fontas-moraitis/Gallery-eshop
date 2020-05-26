@@ -6,7 +6,6 @@ var handleOutsideClick = {}
 
 const OutsideClick = {
   bind (el, binding) {
-    console.dir(el)
     handleOutsideClick[el.id] = e => {
       e.stopPropagation()
       const { handler, exclude } = binding.value
