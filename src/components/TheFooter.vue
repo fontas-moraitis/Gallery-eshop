@@ -16,7 +16,7 @@
       <div class="copyright">
         <p>stavros perakis copyright © 2020</p>
         <router-link class="router-link terms-link" :to="{ name: 'Terms'}">terms and conditions</router-link>
-        <p>created by <a class="medium" href="http://www.fontas.me/" target="blank">fontas</a></p>
+        <p>made by <a class="made-by-link" href="http://www.fontas.me/" target="blank">Fontas Moraitis</a></p>
       </div>
     </div>
   </div>
@@ -60,6 +60,9 @@
       .terms-link {
         color: $black;
         text-decoration: underline;
+      }
+      .made-by-link {
+        font-weight: 200;
       }
       a {
        margin: 0 $marg-xxxsmall;
