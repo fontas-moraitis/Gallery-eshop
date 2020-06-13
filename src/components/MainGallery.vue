@@ -1,6 +1,6 @@
 <template>
   <div class="main-gallery wrapper">
-   <div class="main-gallery__hero-img wrapper">
+   <section class="main-gallery__hero-img wrapper">
      <img
       v-for="(item, index) in cmsMainGallery"
       :key="index"
@@ -8,14 +8,14 @@
       :src="item.image"
       alt="main gallery img"
      />
-   </div>
-   <div class="main-gallery__hero-text">
-     <p class="title">{{cmsMainGallery[currentIndex].title}}</p>
-     <p class="subtitle">{{cmsMainGallery[currentIndex].subTitle}}</p>
-   </div>
+   </section>
+   <section class="main-gallery__hero-text">
+     <h1 class="title">{{cmsMainGallery[currentIndex].title}}</h1>
+     <h2 class="subtitle">{{cmsMainGallery[currentIndex].subTitle}}</h2>
+   </section>
    <img src="@/assets/left.svg" alt="arrow pointing left" @click="imageFlippingBwd" class="previous" />
    <img src="@/assets/right.svg" alt="arrow pointing right" @click="imageFlippingFwd" class="next" />
-   <div class="image-indicator">
+   <nav class="image-indicator">
      <div
       v-for="(circle, index) in cmsMainGallery.length"
       :key="index" class="circle"
@@ -23,7 +23,7 @@
       @click="dotNavigation(index)"
     >
     </div>
-   </div>
+   </nav>
   </div>
 </template>
 

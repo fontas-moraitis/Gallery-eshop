@@ -8,16 +8,16 @@
     <template v-else-if="workshopData">
       <div class="wrapper">
         <div class="container container--column">
-          <p class="page-header">workshop with the artist</p>
-          <div class="intro-wrapper">
+          <h1 class="page-header">workshop with the artist</h1>
+          <main class="intro-wrapper">
             <div class="intro-wrapper__workshops">
               <img :src="workshopData[0].image" :alt="workshopData[0].title" class="ghost--left">
               <div class="text-wrapper ghost--right">
-                <p class="title">{{workshopData[0].title}}</p>
+                <h2 class="title">{{workshopData[0].title}}</h2>
                 <p class="text">{{workshopData[0].description}}</p>
               </div>
             </div>
-          </div>
+          </main>
           <TheFooter />
         </div>
       </div>

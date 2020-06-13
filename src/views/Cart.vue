@@ -2,12 +2,12 @@
   <div class="cart-wrapper">
     <!-- if cart is empty show: -->
     <div class="cart-wrapper__empty-cart" v-if="cartItems.length < 1">
-      <p class="page-header">your bag is empty</p>
+      <h1 class="page-header">your bag is empty</h1>
       <ButtonToGallery />
     </div>
     <!-- otherwise show items -->
     <div class="cart-wrapper__cart" v-else>
-      <p class="page-header self-positioned">your bag contains:</p>
+      <h1 class="page-header self-positioned">your bag contains:</h1>
       <div class="bag-row heavy">
         <p>Product</p>
         <p class="mobile-hide">Details</p>

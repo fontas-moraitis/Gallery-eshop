@@ -6,12 +6,12 @@
       </div>
     </template>
     <template v-else-if="cmsMainGallery">
-      <div class="home">
+      <main class="home">
         <MainGallery
          :cmsMainGallery="cmsMainGallery"
          :isKeyboardNav="isKeyboardNav"
         />
-      </div>
+      </main>
     </template>
     <template v-else>
       <router-link :to="{ name: 'Home' }">

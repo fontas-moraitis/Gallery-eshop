@@ -9,8 +9,8 @@
       <div class="collection">
         <div class="wrapper">
           <div class="container container--column">
-            <p class="page-header">a journey in form</p>
-            <div class="categories-wrapper">
+            <h1 class="page-header">a journey in form</h1>
+            <nav class="categories-wrapper">
               <div
                 v-for="(category, index) in filterOptions"
                 :key="index"
@@ -20,14 +20,14 @@
               >
               {{category.text}}
               </div>
-            </div>
-            <div class="collection__expo">
+            </nav>
+            <main class="collection__expo">
               <SingleProduct
                 v-for="(product, index) in filteredProducts"
                 :key="index"
                 :product="product"
               />
-            </div>
+            </main>
             <TheFooter />
           </div>
         </div>
@@ -111,6 +111,7 @@ export default {
       &__category {
         margin: 0 $marg-medium;
         padding-bottom: 2px;
+        text-transform: capitalize;
         cursor: pointer;
         &:hover {
           color: salmon;

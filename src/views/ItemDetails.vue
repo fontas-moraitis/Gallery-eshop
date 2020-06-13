@@ -39,7 +39,7 @@
                 <p class="item-desc">{{comProduct.prodDescription}}</p>
                 <p class="item-info-title medium">Details:</p>
                 <p class="item-info">Dimensions: {{comProduct.prodDimensions}} cm</p>
-                <p class="item-info">eight: {{comProduct.prodWeight}} kg</p>
+                <p class="item-info">weight: {{comProduct.prodWeight}} kg</p>
                 <p class="item-price medium numbers">{{comProduct.prodPrice | currency}} <span class="price-info">(price per item)</span></p>
                 <div class="item-buttons">
                     <QuantityInput

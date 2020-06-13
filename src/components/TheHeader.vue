@@ -1,7 +1,7 @@
 <template>
         <div class="app-header" :class="[currentPage === 'Home' ? 'light-theme' : 'dark-theme']">
           <router-link v-show="!showDropdownMenu" :to="{ name: 'Home' }" class="app-header__logo">stavros perakis</router-link>
-          <div class="app-header__links">
+          <nav class="app-header__links">
             <router-link class="router-link" :to="{ name: 'Collection' }">shop</router-link>
             <router-link class="router-link" :to="{ name: 'Workshops'}">workshops</router-link>
             <router-link class="router-link" :to="{ name: 'About'}">about</router-link>
@@ -16,8 +16,8 @@
                 <div v-if="totalCart > 0" class="cart-number">{{totalCart}}</div>
               </div>
             </router-link>
-          </div>
-          <div class="mobile-header">
+          </nav>
+          <header class="mobile-header">
             <router-link class="router-link" :to="{ name: 'Cart'}">
               <div :key="totalCart" class="cart-icon shake">
                 <div class="cart-svg">
@@ -43,15 +43,15 @@
                     ]"
                     class="burger-icon burger-bottom">
               </div>
-                <div v-if="showDropdownMenu" class="burger-menu">
+                <nav v-if="showDropdownMenu" class="burger-menu">
                   <router-link class="router-link" :to="{ name: 'Home' }">home</router-link>
                   <router-link class="router-link" :to="{ name: 'Collection' }">shop</router-link>
                   <router-link class="router-link" :to="{ name: 'Workshops'}">workshops</router-link>
                   <router-link class="router-link" :to="{ name: 'About'}">about</router-link>
                   <router-link class="router-link" :to="{ name: 'Cart'}">cart</router-link>
-                </div>
+                </nav>
             </div>
-          </div>
+          </header>
       </div>
 </template>
 

@@ -1,14 +1,12 @@
 <template>
     <!-- Image poping up when clicked and disappears when clicked again -->
-    <div
-      class="pop-up-image"
-    >
-      <img @click.prevent="goToPrevImg" src="@/assets/left--black.svg" alt="arrow pointing left" class="arrow-icon previous">
+    <div class="pop-up-image">
+      <img v-if="allImages.length > 1" @click.prevent="goToPrevImg" src="@/assets/left--black.svg" alt="arrow pointing left" class="arrow-icon previous">
       <div class="image-wrapper">
         <div @click.prevent="closePopUp" class="close-button-wrapper"><img src="@/assets/x.svg" alt="close-button"></div>
           <img :src="currentImage" :alt="imageTitle" class="image-wrapper__image">
       </div>
-      <img @click.prevent="goToNextImg" src="@/assets/right--black.svg" alt="" class="arrow-icon next">
+      <img v-if="allImages.length > 1" @click.prevent="goToNextImg" src="@/assets/right--black.svg" alt="" class="arrow-icon next">
     </div>
 </template>
 

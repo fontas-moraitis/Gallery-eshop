@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="wrapper not-found">
+    <main class="wrapper not-found">
       <div class="container container--column">
-        <p class="not-found__text">the page you were looking for was not found</p>
+        <h1 class="not-found__text">the page you were looking for was not found</h1>
         <router-link :to="{ name: 'Home' }"><button class="button button--light">click here to return home</button></router-link>
       </div>
-    </div>
+    </main>
   </div>
 </template>
 

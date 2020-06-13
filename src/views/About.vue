@@ -8,18 +8,18 @@
     <template v-else-if="cmsAboutData">
       <div class="wrapper">
         <div class="container container--column">
-          <p class="page-header">about the artist</p>
+          <h1 class="page-header">about the artist</h1>
           <div class="intro-wrapper">
             <div class="intro-wrapper__artist">
               <img :src="cmsAboutData[0].image_stavros" :alt="cmsAboutData[0].title" class="ghost--left">
               <div class="text-wrapper ghost--right">
-                <p class="title">{{cmsAboutData[0].title}}</p>
+                <h2 class="title">{{cmsAboutData[0].title}}</h2>
                 <p class="text">{{cmsAboutData[0].bio}}</p>
               </div>
             </div>
             <div class="intro-wrapper__studio">
               <div class="text-wrapper ghost--left">
-                <p class="title">{{cmsAboutData[0].studio}}</p>
+                <h2 class="title">{{cmsAboutData[0].studio}}</h2>
                 <p class="text">{{cmsAboutData[0].aboutStudio}}</p>
               </div>
               <img :src="cmsAboutData[0].image_studio" :alt="cmsAboutData[0].title" class="ghost--right">
