@@ -81,6 +81,7 @@ export default {
         }
         &__title {
           @include title;
+          text-transform: uppercase;
         }
         &__price {
           @include title-price;

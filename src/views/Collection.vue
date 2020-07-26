@@ -107,9 +107,13 @@ export default {
   .collection {
     .categories-wrapper {
       margin-bottom: $marg-xxlarge;
+      max-width: 90%;
+
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       &__category {
-        margin: 0 $marg-medium;
+        margin: $marg-xxsmall $marg-medium;
         padding-bottom: 2px;
         text-transform: capitalize;
         cursor: pointer;
