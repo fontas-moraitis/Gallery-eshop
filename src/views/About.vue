@@ -112,7 +112,7 @@ export default {
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1366px) {
     .intro-wrapper {
       display: flex;
       flex-direction: column;

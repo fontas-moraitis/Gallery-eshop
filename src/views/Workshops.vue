@@ -83,7 +83,7 @@ export default {
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1366px) {
     .intro-wrapper {
       display: flex;
       flex-direction: column;
@@ -97,6 +97,7 @@ export default {
         height: 100%;
         margin-bottom: 0;
         img {
+          display: block;
           height: 100%;
           width: 100%;
           margin-right: 0;
@@ -104,7 +105,7 @@ export default {
         }
         .text-wrapper {
           width: 100vw;
-          height: 200px;
+          height: 100%;
           display: flex;
           flex-direction: column;
           margin: $marg-xlarge 0;

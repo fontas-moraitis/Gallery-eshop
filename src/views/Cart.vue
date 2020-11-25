@@ -168,7 +168,7 @@ export default {
     }
   }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1366px) {
   .image-wrapper {
     display: none;
   }

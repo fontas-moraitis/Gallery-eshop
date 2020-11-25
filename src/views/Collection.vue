@@ -134,7 +134,7 @@ export default {
     border-bottom: 2px solid $black;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1366px) {
     .categories-wrapper {
       margin-top: $marg-large;
     }
