@@ -4,7 +4,7 @@
     <form
       id="contactForm"
       v-outside-click="{exclude: ['outside-click-exclude'], handler: cancelSubmition}"
-      action="https://formspree.io/FORM_ID"
+      action="https://formspree.io/f/maylpywn"
       method="POST"
     >
       <label
@@ -16,10 +16,10 @@
       </label>
       <label class="total medium number">total: {{ totalPrice | currency }}</label>
       <label>
-        <input type="text" name="name" placeholder="First name*" maxlength="30" required>
+        <input type="text" name="firstName" placeholder="First name*" maxlength="30" required>
       </label>
       <label>
-        <input type="text" name="name" placeholder="Last name*" maxlength="30" required>
+        <input type="text" name="lastName" placeholder="Last name*" maxlength="30" required>
       </label>
       <label>
         <input type="email" name="_replyto" placeholder="Your email*" required>
