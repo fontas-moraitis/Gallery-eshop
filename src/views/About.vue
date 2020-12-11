@@ -72,8 +72,8 @@ export default {
 
 <style lang="scss" scoped>
   .intro-wrapper {
-    max-width: 920px;
     margin: 5% 0;
+    max-width: 920px;
     padding: 0 $pad-medium;
     &__artist {
       display: flex;
