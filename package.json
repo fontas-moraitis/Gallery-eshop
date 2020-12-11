@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "npm run lint && vue-cli-service build",
     "test:unit": "vue-cli-service test:unit --watch",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.8.0",
+    "core-js": "^3.8.1",
     "storyblok-js-client": "^2.5.2",
     "vue": "^2.6.12",
     "vue-currency-filter": "^4.0.3",

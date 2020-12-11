@@ -153,8 +153,7 @@ export default {
           } else {
             this.$router.push({ name: 'notFound' })
           }
-        }).catch(error => {
-          console.log(error)
+        }).catch(() => {
           this.error = true
           this.product.loading = false
         })
