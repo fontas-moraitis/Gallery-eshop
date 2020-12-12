@@ -6,6 +6,7 @@
       v-outside-click="{exclude: ['outside-click-exclude'], handler: cancelSubmition}"
       action="https://formspree.io/f/maylpywn"
       method="POST"
+      enctype="multipart/form-data"
     >
       <label
         v-for="item in cartItems"
