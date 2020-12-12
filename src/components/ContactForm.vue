@@ -11,8 +11,10 @@
         v-for="item in cartItems"
         :key="item.id"
         class="item"
+        name="upload"
       >
         <img :src="item.image" :alt="item.title" /><span>{{ item.title }}</span><span class="number">{{ item.quantity }}</span>
+         <input type="file" name="upload">
       </label>
       <label class="total medium number">total: {{ totalPrice | currency }}</label>
       <label>
