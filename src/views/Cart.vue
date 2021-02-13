@@ -107,9 +107,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .page-header {
-    margin-bottom: $marg-xlarge;
-  }
   .cart-wrapper {
     padding: 100px 0;
     width: 100vw;
