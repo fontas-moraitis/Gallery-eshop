@@ -133,7 +133,6 @@ export default {
         }
         .text-wrapper {
           width: 100vw;
-          height: 200px;
           display: flex;
           flex-direction: column;
           margin: $marg-xlarge 0;
